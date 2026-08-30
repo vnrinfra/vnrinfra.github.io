@@ -46,5 +46,51 @@
       ],
       "developer": "Marketed by VNR Infra Developers Pvt. Ltd.",
       "officeAddress": "Jain Sadguru Images Capital Park, 3rd Floor, Unit 308, Capital Park Rd, VIP Hills, Madhapur, HITEC City, Hyderabad \u2013 500081"
+    },
+
+    {
+      "id": "Anvita",
+      "name": "Anvita",
+      "tagline": "A Premium Living Destination",
+      "location": "Kollur, Beside ORR exit 2 \u00b7 Hyderabad",
+      "statusTag": "Booking Open",
+      "tint": "#1D4E89",
+      "images": [
+        "projects/anvita/hero.jpg",
+        "projects/anvita/gateway.jpg",
+        "projects/anvita/plot-layout.jpg",
+        "projects/anvita/roads-drainage.jpg"
+      ],
+      "description": "coming soon",
+      "meta": [
+        { "label": "Plot / home sizes", "value": "140\u2013167 yd\u00b2" },
+        { "label": "RERA no.", "value": "0005/ALAI/SWDL/2026" },
+        { "label": "Possession", "value": "On registration" }
+      ],
+      "approvals": [
+        "DTCP Approved Layout",
+        "TS RERA Registered \u2014 L.P.No. 0005/ALAI/SWDL/2026"
+      ],
+      "features": [
+        "100% Clear Title",
+        "Vaasthu Compliant",
+        "Spot Registration",
+        "30 ft wide BT Roads",
+        "Underground Drainage",
+        "Overhead Water Tank",
+        "24x7 Security",
+        "Avenue Plantation",
+        "Bank Loan Available"
+      ],
+      "priceHighlights": [
+        { "label": "1200 Sft (167 yd\u00b2) \u2014 2BHK", "was": "\u20b948L", "now": "\u20b939.69L" },
+        { "label": "1000 Sft (140 yd\u00b2) \u2014 2BHK", "was": "\u20b942L", "now": "\u20b936.45L" }
+      ],
+      "locationHighlights": [
+        "Beside ORR exit 2, Kollur",
+        "15 min drive to Bhongir town & railway station"
+      ],
+      "developer": "Marketed by VNR Infra Developers Pvt. Ltd.",
+      "officeAddress": "Jain Sadguru Images Capital Park, 3rd Floor, Unit 308, Capital Park Rd, VIP Hills, Madhapur, HITEC City, Hyderabad \u2013 500081"
     }
   ]
