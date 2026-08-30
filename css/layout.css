@@ -2,12 +2,19 @@
    Header
 --------------------------------------------------- */
 .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
+    position: relative;
     background: rgba(245, 243, 238, 0.86);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
+  }
+
+  /* The header partial is injected into #header-root, so the sticky
+     element must be the wrapper — a sticky child within a parent of
+     the same height has zero "stick range" and scrolls away. */
+  #header-root {
+    position: sticky;
+    top: 0;
+    z-index: 50;
   }
   
   .header-inner {

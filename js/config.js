@@ -22,10 +22,10 @@ export const CONFIG = {
     // jsDelivr in front of that repo, or any other static host.
     // Every image path in projects.json is resolved relative to this.
     //
-    // Example once you have an assets repo:
-    // "https://raw.githubusercontent.com/vnrinfra/assets/main/"
-    // or (faster, cached): "https://cdn.jsdelivr.net/gh/vnrinfra/assets@main/"
-    cdnBaseUrl: "https://raw.githubusercontent.com/vnrinfra/assets/main/",
+    // Current host: the "assets" branch of this repo (vnrinfra.github.io),
+    // served via raw.githubusercontent.com.
+    // Faster, cached alternative: "https://cdn.jsdelivr.net/gh/vnrinfra/vnrinfra.github.io@assets/"
+    cdnBaseUrl: "https://raw.githubusercontent.com/vnrinfra/vnrinfra.github.io/assets/",
   
     // Where project data is fetched from. Local JSON for now — swap
     // this for a CDN/API URL later without touching any other file.
