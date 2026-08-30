@@ -1,4 +1,7 @@
 import { CONFIG } from './config.js';
+import { createCarousel } from './carousel.js';
+
+const projectsById = new Map();
 
 function metaListHtml(meta = []) {
   return meta
@@ -15,30 +18,21 @@ function cardActionsHtml(project) {
     </div>`;
 }
 
-// Builds the image/tint block. If the project has an image path, we
-// try to load it from the CDN; onerror swaps back to the plain tint
-// block so a missing/not-yet-uploaded image never breaks the layout.
+// Builds the media block. The carousel is injected into the slot after
+// the grid renders (it needs live DOM, not a string). The wrapper keeps
+// the tint/pattern as a fallback behind every slide.
 function mediaBlockHtml(project) {
   const tag = `<span class="plot-tag">${project.statusTag || ''}</span>`;
-  if (!project.image) {
-    return `<div class="project-plot" style="--tint:${project.tint || '#4B5563'}">${tag}</div>`;
-  }
-  const src = CONFIG.cdnBaseUrl + project.image;
   return `
-    <div class="project-plot project-plot-img" style="--tint:${project.tint || '#4B5563'}">
-      <img
-        src="${src}"
-        alt="${project.name}"
-        loading="lazy"
-        onerror="this.closest('.project-plot').classList.add('img-failed'); this.remove();"
-      >
+    <div class="project-plot" style="--tint:${project.tint || '#4B5563'}">
+      <div class="carousel-slot" data-project-id="${project.id || ''}"></div>
       ${tag}
     </div>`;
 }
 
 function projectCardHtml(project) {
   return `
-    <article class="project-card">
+    <article class="project-card" data-project-id="${project.id || ''}">
       ${mediaBlockHtml(project)}
       <div class="project-body">
         <h3>${project.name}</h3>
@@ -64,11 +58,24 @@ export async function loadProjects() {
       return;
     }
 
+    projectsById.clear();
+    projects.forEach((project) => projectsById.set(project.id, project));
+
     grid.innerHTML = projects.map(projectCardHtml).join('');
+
+    grid.querySelectorAll('.carousel-slot').forEach((slot) => {
+      const project = projectsById.get(slot.dataset.projectId);
+      if (!project) return;
+      slot.replaceWith(createCarousel(project).element);
+    });
   } catch (err) {
     console.error('Failed to load projects:', err);
     grid.innerHTML = `<p class="projects-empty">Couldn't load projects right now. Please refresh, or contact us directly.</p>`;
   } finally {
     document.dispatchEvent(new CustomEvent('projects:loaded'));
   }
+}
+
+export function getProject(id) {
+  return projectsById.get(id);
 }

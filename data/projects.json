@@ -6,7 +6,12 @@
       "location": "Alair \u00b7 Warangal Highway",
       "statusTag": "Booking Open",
       "tint": "#1D4E89",
-      "image": "projects/nidhi-avenue/hero.jpg",
+      "images": [
+        "projects/nidhi-avenue/hero.jpg",
+        "projects/nidhi-avenue/gateway.jpg",
+        "projects/nidhi-avenue/plot-layout.jpg",
+        "projects/nidhi-avenue/roads-drainage.jpg"
+      ],
       "description": "DTCP-approved, TS RERA-registered gated layout on the Warangal Highway, with a grand entrance arch, 30 ft BT roads and underground drainage already in place.",
       "meta": [
         { "label": "Plot / home sizes", "value": "140\u2013167 yd\u00b2" },

@@ -6,6 +6,22 @@
 
 .projects, .process { padding: 96px 0; }
 .why { padding: 96px 0; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.about { padding: 96px 0; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+.placeholder-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--steel);
+  background: rgba(20, 24, 28, 0.06);
+  border: 1px dashed var(--line);
+  border-radius: 20px;
+  padding: 5px 12px;
+  margin-bottom: 16px;
+}
+.about-text { max-width: 640px; color: var(--steel); }
 
 /* ---------------------------------------------------
    Project cards
@@ -21,6 +37,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .project-card:hover { box-shadow: 0 12px 28px rgba(20,24,28,0.08); transform: translateY(-3px); }
@@ -36,21 +53,14 @@
   padding: 14px;
 }
 
-/* When a CDN image is present it sits on top of the tint block; if
-   it 404s the onerror handler removes the <img>, leaving the tint
-   pattern above as a clean fallback. */
-.project-plot-img { padding: 0; align-items: flex-end; }
-.project-plot-img img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.project-plot-img .plot-tag { position: relative; z-index: 1; margin: 14px; }
+/* The carousel fills this block; the tint/gradient stays as the
+   fallback behind every slide (e.g. before CDN images are uploaded). */
+.project-plot { position: relative; }
 
 .plot-tag {
-  background: rgba(20,24,28,0.75);
+  position: relative;
+  z-index: 3;
+  background: rgba(20, 24, 28, 0.75);
   color: #fff;
   font-family: var(--mono);
   font-size: 0.68rem;
@@ -201,3 +211,200 @@
 }
 .contact-alt-label { font-size: 0.86rem; color: rgba(245,243,238,0.65); margin-bottom: 4px; }
 .contact-alt-btn { text-align: center; width: 100%; }
+
+/* ---------------------------------------------------
+   Project detail modal
+--------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: rgba(20, 24, 28, 0.55);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-backdrop[hidden] { display: none; }
+
+.modal {
+  background: var(--concrete);
+  border-radius: 10px;
+  max-width: 720px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: auto;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.modal::-webkit-scrollbar { display: none; }
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(20, 24, 28, 0.75);
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.modal-close:hover { background: var(--blueprint); transform: scale(1.06); }
+
+.modal-media {
+  position: relative;
+  height: 200px;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.08) 10px, rgba(255, 255, 255, 0.08) 11px),
+    var(--tint);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.modal-media-img .plot-tag { position: relative; z-index: 1; margin: 16px; }
+
+/* ---------------------------------------------------
+   Carousel (used inside project cards and the modal)
+--------------------------------------------------- */
+.carousel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.carousel-track { position: absolute; inset: 0; }
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+.carousel-slide.is-active { opacity: 1; }
+.carousel-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  z-index: 3;
+  display: flex;
+  gap: 6px;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 0 1px rgba(20, 24, 28, 0.15);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.carousel-dot:hover { background: #fff; }
+.carousel-dot.is-active { background: #fff; transform: scale(1.25); }
+
+.modal-body { padding: 28px 32px 32px; }
+.modal-title { font-size: 1.8rem; margin-bottom: 0.15em; }
+.modal-tagline {
+  font-family: var(--display);
+  font-weight: 600;
+  color: var(--blueprint);
+  margin-bottom: 0.5em;
+}
+.modal-desc { color: var(--steel); }
+
+.modal-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px 20px;
+  margin: 20px 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line);
+}
+.modal-meta dt {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+.modal-meta dd { margin: 2px 0 0; font-weight: 600; }
+
+.modal-section { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 20px; }
+.modal-h {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blueprint);
+  margin: 0 0 12px;
+}
+
+.modal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.modal-list li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--steel);
+  font-size: 0.9rem;
+}
+.modal-list li::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  background: var(--brass);
+  transform: rotate(45deg);
+}
+.modal-list-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; }
+
+.price-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.price-item { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.price-item span:first-child { color: var(--steel); font-size: 0.9rem; flex: 1; }
+.price-now { font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--blueprint); }
+.price-was { color: var(--steel); font-size: 0.85rem; }
+
+.modal-foot {
+  font-size: 0.82rem;
+  color: var(--steel);
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  margin: 24px 0 0;
+}
+.modal-actions { margin-top: 22px; }

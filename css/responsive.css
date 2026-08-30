@@ -36,4 +36,10 @@
     .whatsapp-float { display: none; }
     .mobile-cta-bar { display: flex; }
     body { padding-bottom: 64px; }
+
+    .modal-backdrop { padding: 12px; align-items: flex-end; }
+    .modal { max-height: 92vh; max-width: 100%; border-radius: 12px 12px 0 0; }
+    .modal-media { height: 150px; }
+    .modal-body { padding: 22px 20px 26px; }
+    .modal-list-grid { grid-template-columns: 1fr; }
   }

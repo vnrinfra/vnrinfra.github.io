@@ -6,13 +6,13 @@
 // ---------------------------------------------------------------
 export const CONFIG = {
     // Display format for the phone number shown in text/buttons.
-    companyPhoneDisplay: "+91 90000 00000",
+    companyPhoneDisplay: "+91 7207477207",
   
     // tel: link value — digits only (plus leading +), no spaces.
-    companyPhoneTel: "+919000000000",
+    companyPhoneTel: "+917207477207",
   
     // wa.me expects country code + number, digits only, no plus sign.
-    companyWhatsapp: "919000000000",
+    companyWhatsapp: "917207477207",
   
     // Default pre-filled WhatsApp message.
     whatsappDefaultMessage: "Hi, I'm interested in VNR Infra projects",

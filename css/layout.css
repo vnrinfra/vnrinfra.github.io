@@ -100,13 +100,21 @@
   .marquee { position: relative; z-index: 1; background: var(--ink); color: var(--concrete); overflow: hidden; padding: 14px 0; }
   .marquee-track {
     display: flex;
-    gap: 24px;
     white-space: nowrap;
     width: max-content;
     animation: scroll-left 26s linear infinite;
     font-family: var(--mono);
     font-size: 0.78rem;
     letter-spacing: 0.1em;
+  }
+  /* Each group carries a trailing gap equal to the inner gap, so the
+     -50% loop point lands exactly on the group boundary and both ends
+     of the track scroll with identical spacing. */
+  .marquee-group {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-right: 24px;
   }
   .marquee-track span { opacity: 0.85; }
   @keyframes scroll-left {
