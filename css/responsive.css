@@ -23,6 +23,7 @@
     .enquiry-form { grid-template-columns: 1fr; }
     .hero-stats { gap: 32px; }
     .contact-columns { grid-template-columns: 1fr; }
+    .office-grid { grid-template-columns: 1fr; }
   }
   
 @media (max-width: 640px) {
