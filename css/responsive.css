@@ -1,0 +1,39 @@
+@media (max-width: 920px) {
+    .project-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .process-list { grid-template-columns: 1fr 1fr; }
+    .enquiry-form { grid-template-columns: 1fr; }
+    .hero-stats { gap: 32px; }
+    .contact-columns { grid-template-columns: 1fr; }
+  }
+  
+  @media (max-width: 640px) {
+    .main-nav {
+      position: absolute;
+      top: 76px;
+      left: 0;
+      right: 0;
+      background: var(--concrete);
+      border-bottom: 1px solid var(--line);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      padding: 8px 28px 20px;
+      display: none;
+    }
+    .main-nav.open { display: flex; }
+    .main-nav a { width: 100%; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .main-nav a.nav-cta { text-align: center; margin-top: 10px; border-bottom: none; }
+    .nav-toggle { display: flex; }
+  
+    .project-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .process-list { grid-template-columns: 1fr 1fr; }
+    .hero { padding: 76px 0 56px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  
+    .header-actions { display: none; }
+    .whatsapp-float { display: none; }
+    .mobile-cta-bar { display: flex; }
+    body { padding-bottom: 64px; }
+  }

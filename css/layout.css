@@ -1,0 +1,191 @@
+/* ---------------------------------------------------
+   Header
+--------------------------------------------------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(245, 243, 238, 0.86);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+  }
+  
+  .brand {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: -0.01em;
+  }
+  .brand span { color: var(--blueprint); }
+  
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 0.94rem;
+    font-weight: 500;
+  }
+  .main-nav a:not(.nav-cta):hover { color: var(--blueprint); }
+  
+  .nav-cta {
+    background: var(--ink);
+    color: var(--concrete);
+    padding: 9px 18px;
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background 0.2s ease;
+  }
+  .nav-cta:hover { background: var(--blueprint); }
+  
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .nav-toggle span { width: 22px; height: 2px; background: var(--ink); display: block; }
+  
+  .header-actions { display: flex; gap: 10px; margin-left: 24px; }
+  .icon-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .icon-btn svg { width: 17px; height: 17px; }
+  .icon-btn:hover { background: var(--blueprint); color: #fff; border-color: var(--blueprint); }
+  .icon-btn-whatsapp:hover { background: #25D366; border-color: #25D366; }
+  
+  /* ---------------------------------------------------
+     Hero
+  --------------------------------------------------- */
+  .hero { position: relative; z-index: 1; padding: 108px 0 84px; }
+  .hero-inner { max-width: 720px; }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+  .hero-sub { font-size: 1.12rem; color: var(--steel); max-width: 560px; }
+  
+  .hero-actions { display: flex; gap: 14px; margin: 32px 0 56px; flex-wrap: wrap; }
+  
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin: 0;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .hero-stats dt { font-family: var(--display); font-size: 2rem; font-weight: 600; color: var(--blueprint); }
+  .hero-stats dd { margin: 2px 0 0; font-size: 0.82rem; color: var(--steel); }
+  
+  /* ---------------------------------------------------
+     Marquee strip
+  --------------------------------------------------- */
+  .marquee { position: relative; z-index: 1; background: var(--ink); color: var(--concrete); overflow: hidden; padding: 14px 0; }
+  .marquee-track {
+    display: flex;
+    gap: 24px;
+    white-space: nowrap;
+    width: max-content;
+    animation: scroll-left 26s linear infinite;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+  }
+  .marquee-track span { opacity: 0.85; }
+  @keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  
+  /* ---------------------------------------------------
+     Footer
+  --------------------------------------------------- */
+  .site-footer { background: var(--ink); color: var(--concrete); padding: 56px 0 32px; position: relative; z-index: 1; }
+  .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
+  .footer-inner .brand { color: var(--concrete); }
+  .footer-inner .brand span { color: var(--brass); }
+  .footer-note { font-size: 0.85rem; color: rgba(245,243,238,0.6); margin: 6px 0 0; }
+  .footer-links { display: flex; gap: 24px; font-size: 0.88rem; }
+  .footer-links a:hover { color: var(--brass); }
+  .footer-copy {
+    width: 100%;
+    font-size: 0.78rem;
+    color: rgba(245,243,238,0.45);
+    margin: 24px 0 0;
+    border-top: 1px solid rgba(245,243,238,0.15);
+    padding-top: 20px;
+  }
+  
+  /* ---------------------------------------------------
+     Floating WhatsApp button
+  --------------------------------------------------- */
+  .whatsapp-float {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+    z-index: 60;
+    transition: transform 0.15s ease;
+  }
+  .whatsapp-float:hover { transform: scale(1.06); }
+  .whatsapp-float svg { width: 28px; height: 28px; }
+  
+  /* ---------------------------------------------------
+     Mobile sticky CTA bar
+  --------------------------------------------------- */
+  .mobile-cta-bar {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 55;
+    background: var(--ink);
+    border-top: 1px solid rgba(245,243,238,0.15);
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    gap: 8px;
+  }
+  .mobile-cta-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--concrete);
+    padding: 8px 4px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    font-family: var(--body);
+    cursor: pointer;
+  }
+  .mobile-cta-btn svg { width: 19px; height: 19px; }
+  .mobile-cta-whatsapp { color: #4ADE80; }
+  .mobile-cta-enquire { background: var(--blueprint); border-radius: 8px; }

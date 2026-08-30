@@ -1,0 +1,45 @@
+[
+    {
+      "id": "nidhi-avenue",
+      "name": "Nidhi Avenue",
+      "tagline": "A Premium Living Destination",
+      "location": "Alair \u00b7 Warangal Highway",
+      "statusTag": "Booking Open",
+      "tint": "#1D4E89",
+      "image": "projects/nidhi-avenue/hero.jpg",
+      "description": "DTCP-approved, TS RERA-registered gated layout on the Warangal Highway, with a grand entrance arch, 30 ft BT roads and underground drainage already in place.",
+      "meta": [
+        { "label": "Plot / home sizes", "value": "140\u2013167 yd\u00b2" },
+        { "label": "RERA no.", "value": "0005/ALAI/SWDL/2026" },
+        { "label": "Possession", "value": "On registration" }
+      ],
+      "approvals": [
+        "DTCP Approved Layout",
+        "TS RERA Registered \u2014 L.P.No. 0005/ALAI/SWDL/2026"
+      ],
+      "features": [
+        "100% Clear Title",
+        "Vaasthu Compliant",
+        "Spot Registration",
+        "30 ft wide BT Roads",
+        "Underground Drainage",
+        "Overhead Water Tank",
+        "24x7 Security",
+        "Avenue Plantation",
+        "Bank Loan Available"
+      ],
+      "priceHighlights": [
+        { "label": "1200 Sft (167 yd\u00b2) \u2014 2BHK", "was": "\u20b948L", "now": "\u20b939.69L" },
+        { "label": "1000 Sft (140 yd\u00b2) \u2014 2BHK", "was": "\u20b942L", "now": "\u20b936.45L" }
+      ],
+      "locationHighlights": [
+        "400 m from Warangal Highway (NH-163)",
+        "15 min drive to Bhongir town & railway station",
+        "20 min drive to Yadadri Temple",
+        "5 km from Alair town",
+        "Close to the upcoming Regional Ring Road (RRR)"
+      ],
+      "developer": "Marketed by VNR Infra Developers Pvt. Ltd.",
+      "officeAddress": "Plot No. 944, 1st Floor, Road No. 5, Vasanth Nagar, Kukatpally, Hyderabad \u2013 500085"
+    }
+  ]

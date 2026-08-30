@@ -1,0 +1,203 @@
+/* ---------------------------------------------------
+   Section shared
+--------------------------------------------------- */
+.section-head { max-width: 620px; margin-bottom: 48px; }
+.section-head h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); }
+
+.projects, .process { padding: 96px 0; }
+.why { padding: 96px 0; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+/* ---------------------------------------------------
+   Project cards
+--------------------------------------------------- */
+.project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.projects-empty { color: var(--steel); font-size: 0.95rem; grid-column: 1 / -1; }
+
+.project-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.project-card:hover { box-shadow: 0 12px 28px rgba(20,24,28,0.08); transform: translateY(-3px); }
+
+.project-plot {
+  position: relative;
+  height: 168px;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.08) 10px, rgba(255,255,255,0.08) 11px),
+    var(--tint);
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+}
+
+/* When a CDN image is present it sits on top of the tint block; if
+   it 404s the onerror handler removes the <img>, leaving the tint
+   pattern above as a clean fallback. */
+.project-plot-img { padding: 0; align-items: flex-end; }
+.project-plot-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-plot-img .plot-tag { position: relative; z-index: 1; margin: 14px; }
+
+.plot-tag {
+  background: rgba(20,24,28,0.75);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+.project-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+.project-body h3 { font-size: 1.3rem; margin-bottom: 0.2em; }
+
+.project-loc { font-family: var(--mono); font-size: 0.76rem; color: var(--steel); margin-bottom: 0.9em; }
+.project-desc { font-size: 0.94rem; color: var(--steel); flex: 1; }
+
+.project-meta {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.86rem;
+}
+.project-meta li { display: flex; justify-content: space-between; gap: 12px; }
+.project-meta span { color: var(--steel); flex-shrink: 0; }
+
+.card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.chip-btn {
+  font-family: var(--body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.chip-btn:hover { background: var(--ink); color: var(--concrete); }
+.chip-btn:first-child { background: var(--blueprint); border-color: var(--blueprint); color: #fff; }
+.chip-btn:first-child:hover { background: #163e6c; }
+
+/* ---------------------------------------------------
+   Why grid
+--------------------------------------------------- */
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.why-item { border-top: 2px solid var(--brass); padding-top: 16px; }
+.why-mark { font-family: var(--display); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5em; }
+.why-item p:last-child { font-size: 0.92rem; color: var(--steel); margin: 0; }
+
+/* ---------------------------------------------------
+   Process
+--------------------------------------------------- */
+.process-list {
+  list-style: none;
+  counter-reset: step;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+.process-list li { counter-increment: step; position: relative; padding-top: 44px; }
+.process-list li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--blueprint);
+}
+.process-step { font-family: var(--display); font-size: 1.12rem; font-weight: 600; margin-bottom: 0.4em; }
+.process-list p:last-child { font-size: 0.92rem; color: var(--steel); }
+
+/* ---------------------------------------------------
+   Contact
+--------------------------------------------------- */
+.contact { padding: 96px 0 120px; }
+.contact-sub { color: var(--steel); }
+
+.contact-columns {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 24px;
+  align-items: start;
+  max-width: 1040px;
+}
+
+.enquiry-form {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-purpose {
+  grid-column: 1 / -1;
+  margin: -6px 0 4px;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blueprint);
+  background: rgba(29, 78, 137, 0.08);
+  border-radius: 20px;
+  padding: 6px 14px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field-wide { grid-column: 1 / -1; }
+.field label { font-size: 0.82rem; font-weight: 600; color: var(--steel); }
+
+.field input, .field select, .field textarea {
+  font-family: var(--body);
+  font-size: 0.96rem;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--concrete);
+  color: var(--ink);
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--blueprint); background: var(--paper); }
+.field input:invalid.touched, .field select:invalid.touched { border-color: #b3432f; }
+
+.form-submit { grid-column: 1 / -1; justify-self: start; }
+
+.form-status { grid-column: 1 / -1; margin: -8px 0 0; font-size: 0.88rem; min-height: 1.2em; }
+.form-status.ok { color: #2f7d4f; }
+.form-status.err { color: #b3432f; }
+
+.contact-alt {
+  background: var(--ink);
+  color: var(--concrete);
+  border-radius: 8px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-alt-label { font-size: 0.86rem; color: rgba(245,243,238,0.65); margin-bottom: 4px; }
+.contact-alt-btn { text-align: center; width: 100%; }

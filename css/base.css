@@ -1,0 +1,112 @@
+/* ---------------------------------------------------
+   VNR Infra — tokens & base
+--------------------------------------------------- */
+:root {
+    --ink: #14181C;
+    --concrete: #F5F3EE;
+    --paper: #FFFFFF;
+    --blueprint: #1D4E89;
+    --brass: #B08D57;
+    --steel: #4B5563;
+    --line: rgba(20, 24, 28, 0.12);
+  
+    --display: "Fraunces", serif;
+    --body: "Inter", sans-serif;
+    --mono: "IBM Plex Mono", monospace;
+  
+    --wrap: 1180px;
+  }
+  
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+  
+  body {
+    margin: 0;
+    background: var(--concrete);
+    color: var(--ink);
+    font-family: var(--body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .wrap {
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  
+  h1, h2, h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    line-height: 1.08;
+    margin: 0 0 0.4em;
+    letter-spacing: -0.01em;
+  }
+  
+  p { margin: 0 0 1em; }
+  
+  a { color: inherit; text-decoration: none; }
+  
+  :focus-visible {
+    outline: 2px solid var(--blueprint);
+    outline-offset: 3px;
+  }
+  
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--steel);
+    margin: 0 0 0.9em;
+  }
+  
+  section { position: relative; z-index: 1; }
+  
+  /* Signature blueprint grid overlay */
+  .grid-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    mask-image: linear-gradient(to bottom, black, transparent 60%);
+  }
+  
+  /* ---------------------------------------------------
+     Buttons
+  --------------------------------------------------- */
+  .btn {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: var(--body);
+    transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  
+  .btn-primary { background: var(--blueprint); color: #fff; }
+  .btn-primary:hover { background: #163e6c; }
+  
+  .btn-ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
+  .btn-ghost:hover { background: var(--ink); color: var(--concrete); }
+  
+  .btn-whatsapp { background: #25D366; color: #fff; }
+  .btn-whatsapp:hover { background: #1ebd59; }
+  
+  /* Reveal-on-scroll (applied via JS to static + dynamic sections) */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
