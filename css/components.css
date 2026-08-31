@@ -8,20 +8,27 @@
 .why { padding: 96px 0; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .about { padding: 96px 0; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
-.placeholder-tag {
-  display: inline-block;
+.about-text { max-width: 640px; color: var(--steel); }
+.about-text strong { color: var(--ink); }
+.about-close { max-width: 640px; font-weight: 600; }
+.about-strength {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 18px;
+}
+.about-strength-note {
   font-family: var(--mono);
   font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--steel);
-  background: rgba(20, 24, 28, 0.06);
-  border: 1px dashed var(--line);
+  color: var(--blueprint);
+  background: rgba(29, 78, 137, 0.08);
+  border: 1px solid rgba(29, 78, 137, 0.2);
   border-radius: 20px;
   padding: 5px 12px;
-  margin-bottom: 16px;
+  margin: 0;
 }
-.about-text { max-width: 640px; color: var(--steel); }
 
 /* ---------------------------------------------------
    Office / location
@@ -85,6 +92,143 @@
   height: 100%;
   border: 0;
   display: block;
+}
+
+/* ---------------------------------------------------
+   Services
+--------------------------------------------------- */
+.services { padding: 96px 0; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.service-item { border-top: 2px solid var(--blueprint); padding-top: 16px; }
+.service-num {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--brass);
+  margin: 0 0 0.6em;
+}
+.service-mark { font-family: var(--display); font-size: 1.08rem; font-weight: 600; margin-bottom: 0.5em; }
+.service-item p:last-child { font-size: 0.92rem; color: var(--steel); margin: 0; }
+
+/* ---------------------------------------------------
+   Managing Director
+--------------------------------------------------- */
+.md { padding: 96px 0; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.md-role { font-family: var(--mono); font-size: 0.8rem; color: var(--steel); margin-top: -0.4em; }
+.md-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 8px; }
+.md-block { display: flex; flex-direction: column; gap: 8px; }
+.md-mark {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-top: 2px solid var(--brass);
+  padding-top: 12px;
+  margin: 0;
+}
+.md-text { color: var(--steel); font-size: 0.94rem; margin: 0 0 6px; }
+.md-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.md-list li { position: relative; padding-left: 18px; color: var(--steel); font-size: 0.9rem; }
+.md-list li::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  background: var(--blueprint);
+  transform: rotate(45deg);
+}
+.md-quote {
+  border-left: 3px solid var(--brass);
+  margin: 44px 0 0;
+  padding: 4px 0 4px 24px;
+  font-family: var(--display);
+  font-size: 1.35rem;
+  line-height: 1.35;
+  max-width: 760px;
+  color: var(--ink);
+}
+
+/* ---------------------------------------------------
+   Vision / Mission / Values
+--------------------------------------------------- */
+.vmv { padding: 96px 0; }
+.vmv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.vmv-block { display: flex; flex-direction: column; gap: 10px; }
+.vmv-mark {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blueprint);
+  margin: 0;
+}
+.vmv-text { color: var(--steel); font-size: 0.98rem; margin: 0; }
+.vmv-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.vmv-list li { position: relative; padding-left: 18px; color: var(--steel); font-size: 0.94rem; }
+.vmv-list li::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  background: var(--brass);
+  transform: rotate(45deg);
+}
+.value-grid {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.value-grid li {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--paper);
+}
+
+/* ---------------------------------------------------
+   Core markets
+--------------------------------------------------- */
+.markets { padding: 96px 0; background: var(--ink); color: var(--concrete); }
+.markets .section-head { max-width: 720px; }
+.markets .section-head h2 { color: var(--concrete); }
+.markets .eyebrow { color: rgba(245, 243, 238, 0.55); }
+.markets-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.market-item {
+  border: 1px solid rgba(245, 243, 238, 0.15);
+  border-radius: 6px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.market-mark { font-family: var(--display); font-weight: 600; font-size: 1.05rem; color: var(--brass); margin-bottom: 0.4em; }
+.market-item p:last-child { color: rgba(245, 243, 238, 0.65); font-size: 0.92rem; margin: 0; }
+
+/* ---------------------------------------------------
+   Contact details
+--------------------------------------------------- */
+.contact-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 4px; }
+.contact-line {
+  font-size: 0.88rem;
+  color: rgba(245, 243, 238, 0.85);
+  margin: 0;
+  display: flex;
+  gap: 8px;
+}
+.contact-line span {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 243, 238, 0.5);
+  min-width: 62px;
 }
 
 /* ---------------------------------------------------
@@ -173,7 +317,7 @@
 /* ---------------------------------------------------
    Why grid
 --------------------------------------------------- */
-.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .why-item { border-top: 2px solid var(--brass); padding-top: 16px; }
 .why-mark { font-family: var(--display); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5em; }
 .why-item p:last-child { font-size: 0.92rem; color: var(--steel); margin: 0; }

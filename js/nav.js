@@ -43,7 +43,9 @@ export function initNav() {
   
   // Static sections are ready at load time.
   export function initStaticReveal() {
-    observeReveal(document.querySelectorAll('.why-item, .process-list li, .section-head'));
+    observeReveal(document.querySelectorAll(
+      '.section-head, .why-item, .process-list li, .service-item, .market-item, .md-block, .vmv-block, .value-grid li, .md-quote'
+    ));
   }
   
   // Project cards only exist once projects.json has rendered.

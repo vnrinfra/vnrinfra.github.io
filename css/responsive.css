@@ -24,14 +24,21 @@
     .hero-stats { gap: 32px; }
     .contact-columns { grid-template-columns: 1fr; }
     .office-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .md-grid { grid-template-columns: 1fr; }
+    .vmv-grid { grid-template-columns: 1fr; }
+    .markets-grid { grid-template-columns: 1fr 1fr; }
   }
   
 @media (max-width: 640px) {
-    .project-grid { grid-template-columns: 1fr; }
+.project-grid { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
     .process-list { grid-template-columns: 1fr 1fr; }
     .hero { padding: 76px 0 56px; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
+    .services-grid { grid-template-columns: 1fr; }
+    .markets-grid { grid-template-columns: 1fr; }
+    .md-quote { font-size: 1.15rem; padding-left: 18px; }
   
     .header-actions { display: none; }
     .whatsapp-float { display: none; }
