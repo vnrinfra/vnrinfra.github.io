@@ -44,7 +44,7 @@ export function initNav() {
   // Static sections are ready at load time.
   export function initStaticReveal() {
     observeReveal(document.querySelectorAll(
-      '.section-head, .why-item, .process-list li, .service-item, .market-item, .md-block, .vmv-block, .value-grid li, .md-quote'
+      '.section-head, .why-item, .process-list li, .service-item, .market-item, .md-block, .md-photo, .vmv-block, .value-grid li, .md-quote, .past-item'
     ));
   }
   

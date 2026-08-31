@@ -73,10 +73,13 @@ function modalHtml(project) {
       </div>`);
   }
 
-  const footer = [project.developer, project.officeAddress]
-    .filter(Boolean)
-    .map((line) => `<p class="modal-foot">${esc(line)}</p>`)
-    .join('');
+  const footerLines = [project.developer, project.officeAddress].filter(Boolean);
+  const footer = footerLines.length
+    ? `<p class="modal-foot">${footerLines.map(esc).join('<br/>')}</p>`
+    : '';
+  const map = project.mapEmbed
+    ? `<div class="modal-map"><iframe src="${esc(project.mapEmbed)}" title="${esc(project.name)} \u2014 location map" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`
+    : '';
 
   return `
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pm-title">
@@ -89,6 +92,7 @@ function modalHtml(project) {
         ${project.description ? `<p class="modal-desc">${esc(project.description)}</p>` : ''}
         ${project.meta && project.meta.length ? `<dl class="modal-meta">${metaDl(project.meta)}</dl>` : ''}
         ${sections.join('')}
+        ${map}
         ${footer}
         <div class="card-actions modal-actions">
           <button type="button" class="chip-btn" data-lead-action="Site Visit" data-lead-project="${esc(project.name)}">Book Site Visit</button>

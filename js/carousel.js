@@ -1,6 +1,7 @@
 import { CONFIG } from './config.js';
 
 const INTERVAL = 3200;
+export const CAROUSEL_INTERVAL = INTERVAL;
 const registry = new Set();
 
 // Pause every carousel when the tab is hidden; resume when visible.
@@ -9,7 +10,8 @@ document.addEventListener('visibilitychange', () => {
   registry.forEach((carousel) => (paused ? carousel.stop() : carousel.start()));
 });
 
-export function createCarousel(project) {
+export function createCarousel(project, options = {}) {
+  const { onChange } = options;
   const imagePaths = Array.isArray(project.images)
     ? project.images
     : project.image
@@ -42,6 +44,7 @@ export function createCarousel(project) {
         dot.classList.toggle('is-active', i === index);
       });
     }
+    if (onChange) onChange(index, count);
   }
 
   function next() {
@@ -123,6 +126,7 @@ export function createCarousel(project) {
   registry.add(controller);
   root.addEventListener('mouseenter', stop);
   root.addEventListener('mouseleave', start);
+  update();
   start();
 
   return controller;

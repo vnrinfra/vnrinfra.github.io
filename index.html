@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VNR Infra — Plots, Villas & Land Investments</title>
+<link rel="icon" href="favicon.png" sizes="any" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -23,18 +24,23 @@
 
   <section class="hero">
     <div class="wrap hero-inner">
-      <p class="eyebrow">SURVEY NO. 114/2A &mdash; RANGA REDDY DISTRICT</p>
-      <h1>Land, laid out<br>with a plan.</h1>
-      <p class="hero-sub">VNR Infra develops HMDA &amp; RERA-approved open plots and villa communities around Hyderabad &mdash; clear titles, real infrastructure, no surprises on possession day.</p>
-      <div class="hero-actions">
-        <button type="button" class="btn btn-primary" data-lead-action="Site Visit" data-lead-project="General">Book a Site Visit</button>
-        <button type="button" class="btn btn-ghost" data-lead-action="Price Details" data-lead-project="General">Get Price Details</button>
+      <div class="hero-content">
+        <p class="eyebrow">SURVEY NO. 114/2A &mdash; RANGA REDDY DISTRICT</p>
+        <h1>Land, laid out<br>with a plan.</h1>
+        <p class="hero-sub">VNR Infra develops HMDA &amp; RERA-approved open plots and villa communities around Hyderabad &mdash; clear titles, real infrastructure, no surprises on possession day.</p>
+        <div class="hero-actions">
+          <button type="button" class="btn btn-primary" data-lead-action="Site Visit" data-lead-project="General">Book a Site Visit</button>
+          <button type="button" class="btn btn-ghost" data-lead-action="Price Details" data-lead-project="General">Get Price Details</button>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>25+</dt><dd>Yrs professional experience</dd></div>
+          <div><dt>15+</dt><dd>Yrs in real estate</dd></div>
+          <div><dt>860+</dt><dd>Families settled</dd></div>
+        </dl>
       </div>
-      <dl class="hero-stats">
-        <div><dt>25+</dt><dd>Yrs professional experience</dd></div>
-        <div><dt>15+</dt><dd>Yrs in real estate</dd></div>
-        <div><dt>860+</dt><dd>Families settled</dd></div>
-      </dl>
+      <div class="hero-carousel">
+        <div class="hero-carousel-box" aria-label="Project imagery"></div>
+      </div>
     </div>
   </section>
 
@@ -81,6 +87,43 @@
       <!-- Populated by js/projects.js from data/projects.json -->
       <div class="project-grid" id="projects-grid">
         <p class="projects-empty">Loading projects&hellip;</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="past" id="past">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">PROJECT EXPERIENCE</p>
+        <h2>Delivered &amp; on the way.</h2>
+        <p class="past-sub">From open plots to high-rise marketing, here&rsquo;s the ground we&rsquo;ve already covered &mdash; and what&rsquo;s live now.</p>
+      </div>
+
+      <div class="past-grid">
+        <div class="past-item is-complete">
+          <div class="past-status">Completed</div>
+          <p class="past-name">Project name &mdash; edit me</p>
+          <p class="past-loc">Location, Telangana</p>
+          <p class="past-note">Short line about what &mdash; e.g. gated open plots, residential layout, farm plots &mdash; and year delivered.</p>
+        </div>
+        <div class="past-item is-complete">
+          <div class="past-status">Completed</div>
+          <p class="past-name">Project name &mdash; edit me</p>
+          <p class="past-loc">Location, Telangana</p>
+          <p class="past-note">Short line about what &mdash; e.g. gated open plots, residential layout, farm plots &mdash; and year delivered.</p>
+        </div>
+        <div class="past-item is-live">
+          <div class="past-status">Live now</div>
+          <p class="past-name">Nidhi Avenue</p>
+          <p class="past-loc">Alair &middot; Warangal Highway</p>
+          <p class="past-note">DTCP-approved, TS RERA-registered gated layout with BT roads, drainage and spot registration.</p>
+        </div>
+        <div class="past-item is-live">
+          <div class="past-status">Live now</div>
+          <p class="past-name">Anvita High 9</p>
+          <p class="past-loc">Kollur &middot; Financial District</p>
+          <p class="past-note">15-acre, 9-tower luxury gated community by RS Pasuraa &amp; Anvita Buildpro LLP, marketed by VNR Infra.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -264,10 +307,19 @@
 
   <section class="md" id="md">
     <div class="wrap md-inner">
-      <div class="section-head">
-        <p class="eyebrow">MANAGING DIRECTOR</p>
-        <h2>V N R Garu</h2>
-        <p class="md-role">Managing Director &middot; MBA (Finance) &middot; FICO &middot; M.Com</p>
+      <div class="md-top">
+        <div class="section-head">
+          <p class="eyebrow">MANAGING DIRECTOR</p>
+          <h2>V N R Garu</h2>
+          <p class="md-role">Managing Director &middot; MBA (Finance) &middot; FICO &middot; M.Com</p>
+        </div>
+        <div class="md-photo" role="img" aria-label="Managing Director profile photo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 21c0-3.9 3.6-6 8-6s8 2.1 8 6"></path>
+          </svg>
+          <span class="md-photo-note">Profile photo</span>
+        </div>
       </div>
       <div class="md-grid">
         <div class="md-block">
@@ -396,6 +448,15 @@
 
 <!-- Footer + floating WhatsApp + mobile CTA bar, from partials/footer.html -->
 <div id="footer-root"></div>
+
+<div class="section-pager" aria-label="Section navigation">
+  <button class="pager-btn pager-up" type="button" aria-label="Previous section">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"></path></svg>
+  </button>
+  <button class="pager-btn pager-down" type="button" aria-label="Next section">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+  </button>
+</div>
 
 <script type="module" src="js/main.js"></script>
 </body>

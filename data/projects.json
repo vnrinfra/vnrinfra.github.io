@@ -44,52 +44,56 @@
         "5 km from Alair town",
         "Close to the upcoming Regional Ring Road (RRR)"
       ],
+      "mapEmbed": "https://www.google.com/maps?q=Nidhi%20Avenue%2C%20Alair%2C%20Warangal%20Highway%2C%20Telangana&z=13&output=embed",
       "developer": "Marketed by VNR Infra Developers Pvt. Ltd.",
       "officeAddress": "Jain Sadguru Images Capital Park, 3rd Floor, Unit 308, Capital Park Rd, VIP Hills, Madhapur, HITEC City, Hyderabad \u2013 500081"
     },
 
     {
       "id": "Anvita",
-      "name": "Anvita",
-      "tagline": "A Premium Living Destination",
-      "location": "Kollur, Beside ORR exit 2 \u00b7 Hyderabad",
+      "name": "Anvita High 9",
+      "tagline": "Luxury Living in Kollur \u00b7 Live High, From Ground to Sky",
+      "location": "Off ORR Exit-2, Kollur \u00b7 Financial District, Hyderabad",
       "statusTag": "Booking Open",
       "tint": "#1D4E89",
       "images": [
         "projects/anvita/hero.jpg",
         "projects/anvita/gateway.jpg",
-        "projects/anvita/plot-layout.jpg",
-        "projects/anvita/roads-drainage.jpg"
+        "projects/anvita/layout.jpg",
+        "projects/anvita/clubhouse.jpg"
       ],
-      "description": "coming soon",
+      "description": "A 15-acre luxury gated community of nine towers rising 30 floors \u2014 2 & 3 BHK lifestyle apartments and 4 BHK sky villas \u2014 connected by a 1.6 km skywalk, with the designer Club High, landscaped grounds and a traffic-free podium in the green environs of Kollur.",
       "meta": [
-        { "label": "Plot / home sizes", "value": "140\u2013167 yd\u00b2" },
-        { "label": "RERA no.", "value": "0005/ALAI/SWDL/2026" },
-        { "label": "Possession", "value": "On registration" }
+        { "label": "Project area", "value": "15 acres" },
+        { "label": "Towers / floors", "value": "9 towers \u00b7 30 floors" },
+        { "label": "RERA no.", "value": "P01100008195" }
       ],
       "approvals": [
-        "DTCP Approved Layout",
-        "TS RERA Registered \u2014 L.P.No. 0005/ALAI/SWDL/2026"
+        "TS RERA Registered \u2014 P01100008195",
+        "HMDA Approved"
       ],
       "features": [
-        "100% Clear Title",
-        "Vaasthu Compliant",
-        "Spot Registration",
-        "30 ft wide BT Roads",
-        "Underground Drainage",
-        "Overhead Water Tank",
-        "24x7 Security",
-        "Avenue Plantation",
-        "Bank Loan Available"
+        "2 & 3 BHK Lifestyle Apartments",
+        "4 BHK Sky Villas",
+        "1.6 km Skywalk",
+        "More than 80% open space",
+        "2 amenity blocks incl. a sports complex",
+        "2 swimming pools",
+        "Club High clubhouse & designer terraces",
+        "Skating rink, cycling & jogging track",
+        "24x7 CCTV security",
+        "100% power backup",
+        "Traffic-free podium",
+        "Pet park"
       ],
       "priceHighlights": [
-        { "label": "1200 Sft (167 yd\u00b2) \u2014 2BHK", "was": "\u20b948L", "now": "\u20b939.69L" },
-        { "label": "1000 Sft (140 yd\u00b2) \u2014 2BHK", "was": "\u20b942L", "now": "\u20b936.45L" }
+        { "label": "Apartments & Sky Villas", "now": "On request" }
       ],
       "locationHighlights": [
-        "Beside ORR exit 2, Kollur",
-        "15 min drive to Bhongir town & railway station"
+        "Beside ORR Exit-2, Kollur",
+        "Financial District, Hyderabad"
       ],
+      "mapEmbed": "https://www.google.com/maps?q=Anvita%20High%209%2C%20Kollur%2C%20Hyderabad%2C%20Telangana&z=14&output=embed",
       "developer": "Marketed by VNR Infra Developers Pvt. Ltd.",
       "officeAddress": "Jain Sadguru Images Capital Park, 3rd Floor, Unit 308, Capital Park Rd, VIP Hills, Madhapur, HITEC City, Hyderabad \u2013 500081"
     }
