@@ -208,6 +208,26 @@
     border-radius: 999px;
     padding: 5px 10px;
   }
+  .hero-placeholder {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+    color: var(--blueprint);
+    padding: 24px;
+  }
+  .hero-placeholder-note {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(29, 78, 137, 0.75);
+  }
   .hero-bar {
     position: absolute;
     left: 0;

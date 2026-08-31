@@ -5,7 +5,7 @@ import { initLeadForm } from './lead-form.js';
 import { initProjectDetail } from './project-detail.js';
 import { initSectionNav } from './section-nav.js';
 import { initMarquee } from './marquee.js';
-import { initHeroCarousel } from './hero-carousel.js';
+import { initHeroCarousel, initAboutCarousel } from './hero-carousel.js';
 
 async function init() {
   initNav();          // event-delegated, safe before header exists
@@ -13,6 +13,7 @@ async function init() {
   initLeadForm();      // event-delegated, safe before cards exist
   initMarquee();       // fill the marquee strip across desktop widths
   initHeroCarousel();  // right-side hero slides (auto-advancing)
+  initAboutCarousel(); // about-section imagery (placeholder until images added)
   wireStaticContactLinks();
 
   await loadChrome();   // header + footer

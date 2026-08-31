@@ -8,6 +8,126 @@
 .why { padding: 96px 0; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .about { padding: 96px 0; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.about-content { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.about-carousel {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(29, 78, 137, 0.16);
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.06) 10px, rgba(255, 255, 255, 0.06) 11px),
+    linear-gradient(150deg, rgba(29, 78, 137, 0.12), rgba(29, 78, 137, 0.26));
+  box-shadow: 0 24px 50px -20px rgba(20, 24, 28, 0.35);
+}
+.about-carousel .carousel { position: absolute; inset: 0; }
+.about-carousel .carousel-dots { display: none; }
+.about-carousel .carousel-slide img { transform: scale(1.14); }
+.about-carousel .carousel-slide.is-active img { animation: about-zoom 3.4s ease-out forwards; }
+.about-carousel::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 46%;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(20, 24, 28, 0.5), rgba(20, 24, 28, 0));
+  pointer-events: none;
+}
+.about-caption {
+  position: absolute;
+  left: 18px;
+  bottom: 24px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.88);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  backdrop-filter: blur(10px) saturate(1.2);
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 8px 22px rgba(20, 24, 28, 0.18);
+}
+.about-caption-name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.about-caption-where {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--blueprint);
+}
+.about-counter {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: #fff;
+  background: rgba(20, 24, 28, 0.42);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 5px 10px;
+}
+.about-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+}
+.about-bar-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--brass), var(--blueprint));
+}
+.about-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  color: var(--blueprint);
+  padding: 24px;
+}
+.about-placeholder-note {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(29, 78, 137, 0.75);
+}
+@keyframes about-zoom {
+  from { transform: scale(1.14); }
+  to { transform: scale(1.02); }
+}
+@keyframes about-fill {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
 .about-text { max-width: 640px; color: var(--steel); }
 .about-text strong { color: var(--ink); }
 .about-close { max-width: 640px; font-weight: 600; }
@@ -396,7 +516,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 28px;
 }
-.process-list li { counter-increment: step; position: relative; padding-top: 44px; }
+.process-list li { counter-increment: step; position: relative; padding-top: 56px; }
 .process-list li::before {
   content: counter(step, decimal-leading-zero);
   position: absolute;
@@ -405,6 +525,16 @@
   font-family: var(--mono);
   font-size: 0.82rem;
   color: var(--blueprint);
+}
+.process-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  margin: 0 0 18px;
 }
 .process-step { font-family: var(--display); font-size: 1.12rem; font-weight: 600; margin-bottom: 0.4em; }
 .process-list p:last-child { font-size: 0.92rem; color: var(--steel); }
@@ -694,4 +824,89 @@
   border: 0;
   display: block;
 }
+
+/* Modal gallery */
+.modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.modal-gallery-item {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border: none;
+  padding: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--paper);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.modal-gallery-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(20, 24, 28, 0.18);
+}
+.modal-gallery-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.modal-gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(20, 24, 28, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.lightbox[hidden] { display: none; }
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.lightbox-close:hover { opacity: 1; }
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+.lightbox-prev:hover,
+.lightbox-next:hover { background: rgba(255, 255, 255, 0.2); }
 .modal-actions { margin-top: 22px; }

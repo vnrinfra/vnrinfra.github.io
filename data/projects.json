@@ -7,10 +7,12 @@
       "statusTag": "Booking Open",
       "tint": "#1D4E89",
       "images": [
-        "projects/nidhi-avenue/hero.jpg",
-        "projects/nidhi-avenue/gateway.jpg",
-        "projects/nidhi-avenue/plot-layout.jpg",
-        "projects/nidhi-avenue/roads-drainage.jpg"
+        "projects/nidhi-avenue/entrance.jpg",
+        "projects/nidhi-avenue/open-plots.jpg",
+        "projects/nidhi-avenue/clubhouse.jpg",
+        "projects/nidhi-avenue/park.jpg",
+        "projects/nidhi-avenue/avenue.jpg",
+        "projects/nidhi-avenue/drone.jpg"
       ],
       "description": "DTCP-approved, TS RERA-registered gated layout on the Warangal Highway, with a grand entrance arch, 30 ft BT roads and underground drainage already in place.",
       "meta": [

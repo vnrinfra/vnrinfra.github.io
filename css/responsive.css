@@ -28,6 +28,7 @@
     .hero-carousel-box { aspect-ratio: 4 / 3; border-radius: 18px; }
     .contact-columns { grid-template-columns: 1fr; }
     .office-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
     .services-grid { grid-template-columns: 1fr 1fr; }
     .md-grid { grid-template-columns: 1fr; }
     .md-top { flex-direction: column; align-items: flex-start; gap: 24px; }
@@ -69,4 +70,9 @@
     .modal-media { height: 230px; }
     .modal-body { padding: 22px 20px 26px; }
     .modal-list-grid { grid-template-columns: 1fr; }
+    .modal-gallery { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .lightbox { padding: 20px; }
+    .lightbox-prev, .lightbox-next { padding: 8px 12px; font-size: 1.5rem; }
+    .lightbox-prev { left: 8px; }
+    .lightbox-next { right: 8px; }
   }

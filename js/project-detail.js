@@ -1,5 +1,6 @@
 import { createCarousel } from './carousel.js';
 import { getProject } from './projects.js';
+import { CONFIG } from './config.js';
 
 let backdrop = null;
 let lastFocus = null;
@@ -30,6 +31,20 @@ function priceHtml(price = []) {
         ${p.was ? `<span class="price-was"><s>${esc(p.was)}</s></span>` : ''}
       </li>`)
     .join('');
+}
+
+function galleryHtml(project) {
+  const images = project.images || [];
+  if (images.length < 2) return '';
+  const items = images.map((src, i) => `
+    <button type="button" class="modal-gallery-item" data-gallery-index="${i}" aria-label="View image ${i + 1}">
+      <img src="${esc(CONFIG.cdnBaseUrl + src)}" alt="${esc(project.name)} photo ${i + 1}" loading="lazy" />
+    </button>`).join('');
+  return `
+    <div class="modal-section">
+      <h4 class="modal-h">Gallery</h4>
+      <div class="modal-gallery">${items}</div>
+    </div>`;
 }
 
 function mediaHtml(project) {
@@ -81,6 +96,8 @@ function modalHtml(project) {
     ? `<div class="modal-map"><iframe src="${esc(project.mapEmbed)}" title="${esc(project.name)} \u2014 location map" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`
     : '';
 
+  const galleryImages = (project.images || []).map((src) => CONFIG.cdnBaseUrl + src);
+
   return `
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pm-title">
       <button type="button" class="modal-close" aria-label="Close details">&times;</button>
@@ -92,6 +109,7 @@ function modalHtml(project) {
         ${project.description ? `<p class="modal-desc">${esc(project.description)}</p>` : ''}
         ${project.meta && project.meta.length ? `<dl class="modal-meta">${metaDl(project.meta)}</dl>` : ''}
         ${sections.join('')}
+        ${galleryHtml(project)}
         ${map}
         ${footer}
         <div class="card-actions modal-actions">
@@ -99,6 +117,12 @@ function modalHtml(project) {
           <button type="button" class="chip-btn" data-lead-action="Brochure" data-lead-project="${esc(project.name)}">Brochure</button>
           <button type="button" class="chip-btn" data-lead-action="Price Details" data-lead-project="${esc(project.name)}">Get Price</button>
         </div>
+      </div>
+      <div class="lightbox" id="modal-lightbox" data-images='${JSON.stringify(galleryImages)}' hidden>
+        <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+        <button type="button" class="lightbox-prev" aria-label="Previous image">&lsaquo;</button>
+        <button type="button" class="lightbox-next" aria-label="Next image">&rsaquo;</button>
+        <img class="lightbox-img" src="" alt="" />
       </div>
     </div>`;
 }
@@ -127,6 +151,51 @@ function openModal(project) {
   lastFocus = document.activeElement;
   document.body.style.overflow = 'hidden';
   root.querySelector('.modal-close').focus();
+
+  // Lightbox setup
+  const lightbox = root.querySelector('#modal-lightbox');
+  const lightboxImg = root.querySelector('.lightbox-img');
+  const images = JSON.parse(lightbox.dataset.images || '[]');
+  let currentIndex = 0;
+
+  function showLightboxImage(index) {
+    if (index < 0 || index >= images.length) return;
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex];
+    lightboxImg.alt = `Photo ${currentIndex + 1} of ${images.length}`;
+  }
+
+  root.addEventListener('click', (e) => {
+    const galleryItem = e.target.closest('.modal-gallery-item');
+    if (galleryItem) {
+      const idx = parseInt(galleryItem.dataset.galleryIndex, 10);
+      showLightboxImage(idx);
+      lightbox.hidden = false;
+      return;
+    }
+
+    if (e.target.closest('.lightbox-close') || e.target === lightbox) {
+      lightbox.hidden = true;
+      return;
+    }
+
+    if (e.target.closest('.lightbox-prev')) {
+      showLightboxImage((currentIndex - 1 + images.length) % images.length);
+      return;
+    }
+
+    if (e.target.closest('.lightbox-next')) {
+      showLightboxImage((currentIndex + 1) % images.length);
+      return;
+    }
+  });
+
+  root.addEventListener('keydown', (e) => {
+    if (lightbox.hidden) return;
+    if (e.key === 'Escape') lightbox.hidden = true;
+    if (e.key === 'ArrowLeft') showLightboxImage((currentIndex - 1 + images.length) % images.length);
+    if (e.key === 'ArrowRight') showLightboxImage((currentIndex + 1) % images.length);
+  });
 }
 
 function closeModal() {
