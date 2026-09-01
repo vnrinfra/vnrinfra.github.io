@@ -7,6 +7,7 @@ function buildTokenMap() {
     PHONE_DISPLAY: CONFIG.companyPhoneDisplay,
     PHONE_TEL: CONFIG.companyPhoneTel,
     WHATSAPP_URL: `https://wa.me/${CONFIG.companyWhatsapp}?text=${waMessage}`,
+    COMPANY_EMAIL: CONFIG.companyEmail,
   };
 }
 
@@ -55,5 +56,9 @@ export function wireStaticContactLinks() {
     el.href = tokens.WHATSAPP_URL;
     el.target = '_blank';
     el.rel = 'noopener';
+  });
+  document.querySelectorAll('[data-contact="email"]').forEach((el) => {
+    el.href = `mailto:${tokens.COMPANY_EMAIL}`;
+    el.textContent = tokens.COMPANY_EMAIL;
   });
 }

@@ -14,6 +14,28 @@ export const CONFIG = {
     // wa.me expects country code + number, digits only, no plus sign.
     companyWhatsapp: "917207477207",
   
+    // Email used for mailto: links in CTAs and the contact section.
+    companyEmail: "venkimba2012@gmail.com",
+
+    // ---------------------------------------------------------------
+    // Web3Forms (serverless contact-form backend). No server needed —
+    // submissions POST to web3forms.com and are delivered to the email
+    // set on the form's dashboard. Keep these dynamic so you can point
+    // leads anywhere (e.g. your inbox for testing, the client later)
+    // without touching form code.
+    //
+    //   web3formsEndpoint : the submit URL (public, fixed).
+    //   web3formsAccessKey : your form's public access key (safe to ship
+    //                        in client code — it is public by design).
+    //   leadRecipientEmail : where leads are delivered. Also forwarded to
+    //                        the payload, and the recipient you set on the
+    //                        web3forms.com dashboard MUST match this for
+    //                        delivery to take effect.
+    // ---------------------------------------------------------------
+    web3formsEndpoint: "https://api.web3forms.com/submit",
+    web3formsAccessKey: "ca0bb91c-393d-4aab-bfe6-a639fba15b0b",
+    leadRecipientEmail: "chnrndr3@gmail.com",
+
     // Default pre-filled WhatsApp message.
     whatsappDefaultMessage: "Hi, I'm interested in VNR Infra projects",
   

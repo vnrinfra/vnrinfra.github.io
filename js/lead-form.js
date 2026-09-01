@@ -1,10 +1,12 @@
+import { submitLead } from './form-api.js';
+
 const submitLabels = {
     'Site Visit': 'Confirm Site Visit',
     'Brochure': 'Send Me the Brochure',
     'Price Details': 'Send Price Details',
     'Enquiry': 'Request Callback',
   };
-  
+
   const actionPhrases = {
     'Site Visit': "we'll confirm your site visit",
     'Brochure': "we'll send the brochure",
@@ -16,6 +18,9 @@ const submitLabels = {
   // project name. Falls back to leaving the select untouched.
   function guessInterest(projectName) {
     const name = (projectName || '').toLowerCase();
+    // Known current projects map to their dropdown options.
+    if (name.includes('anvita')) return 'anvita';
+    if (name.includes('nidhi')) return 'nidhi';
     if (name.includes('villa')) return 'villas';
     if (name.includes('farm')) return 'farmland';
     if (name.includes('avenue') || name.includes('plot')) return 'plots';
@@ -66,43 +71,82 @@ const submitLabels = {
     form.querySelectorAll('input, select').forEach((field) => {
       field.addEventListener('blur', () => field.classList.add('touched'));
     });
-  
-    form.addEventListener('submit', (e) => {
+
+    // Phone field accepts digits only, max 10.
+    form.phone.addEventListener('input', (e) => {
+      e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10);
+    });
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-  
+
       const name = form.name.value.trim();
       const phone = form.phone.value.trim();
-      const phonePattern = /^[0-9+\-\s]{7,15}$/;
-  
+      const interest = form.interest.value;
+      let message = form.message.value.trim();
+
       if (!name) {
         setStatus(status, 'Please enter your name.', 'err');
         form.name.classList.add('touched');
         form.name.focus();
         return;
       }
-  
-      if (!phonePattern.test(phone)) {
-        setStatus(status, 'Please enter a valid phone number.', 'err');
+
+      if (!phone) {
+        setStatus(status, 'Please enter your phone number.', 'err');
         form.phone.classList.add('touched');
         form.phone.focus();
         return;
       }
-  
+      if (!/^\d{10}$/.test(phone)) {
+        setStatus(status, 'Please enter a valid 10-digit phone number.', 'err');
+        form.phone.classList.add('touched');
+        form.phone.focus();
+        return;
+      }
+
+      if (!interest) {
+        setStatus(status, 'Please choose what you\u2019re interested in.', 'err');
+        form.interest.classList.add('touched');
+        form.interest.focus();
+        return;
+      }
+
+      if (!message) {
+        message = 'interested';
+        form.message.value = message;
+      }
+
       const action = leadActionInput.value;
       const project = leadProjectInput.value;
       const phrase = actionPhrases[action] || actionPhrases.Enquiry;
       const projectPhrase = project !== 'General' ? ` for ${project}` : '';
-  
-      // No backend wired up yet — this just confirms locally.
-      // Replace this block with a fetch() to your form endpoint / API,
-      // sending leadAction + leadProject so you know which CTA it came from.
-      setStatus(status, `Thanks ${name.split(' ')[0]}, ${phrase}${projectPhrase} at ${phone} shortly.`, 'ok');
-  
-      form.reset();
-      form.querySelectorAll('.touched').forEach((el) => el.classList.remove('touched'));
-      leadActionInput.value = 'Enquiry';
-      leadProjectInput.value = 'General';
-      formPurposeNote.textContent = 'General enquiry';
-      submitBtn.textContent = 'Request Callback';
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending\u2026';
+
+      const result = await submitLead({
+        name,
+        phone,
+        interest,
+        message,
+        subject: `New VNR Infra lead \u2014 ${action}${projectPhrase}`,
+        leadAction: action,
+        leadProject: project,
+      });
+
+      if (result.ok) {
+        form.reset();
+        form.querySelectorAll('.touched').forEach((el) => el.classList.remove('touched'));
+        leadActionInput.value = 'Enquiry';
+        leadProjectInput.value = 'General';
+        formPurposeNote.textContent = 'General enquiry';
+        submitBtn.textContent = 'Request Callback';
+        alert(`Thanks ${name.split(' ')[0]}, ${phrase}${projectPhrase} at ${phone} shortly.`);
+      } else {
+        setStatus(status, result.message, 'err');
+        submitBtn.textContent = submitLabels[action] || 'Request Callback';
+      }
+      submitBtn.disabled = false;
     });
   }

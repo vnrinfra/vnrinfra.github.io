@@ -98,9 +98,11 @@ export function initHeroCarousel() {
 // About-section carousel. Add slide paths to ABOUT_IMAGES to activate real
 // imagery; until then it renders a branded placeholder, so there's nothing to
 // fix if the assets branch / CDN images aren't ready yet.
-const ABOUT_IMAGES = [];
+const ABOUT_IMAGES = [
+  "assets/about/company_1.jpg",
+];
 const ABOUT_SLIDES = [
-  { image: '', name: '', where: '' },
+  { image: '', name: 'visiting card', where: 'Hyderabad, telangana' },
 ];
 
 export function initAboutCarousel() {

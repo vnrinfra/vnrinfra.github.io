@@ -412,6 +412,13 @@
   color: rgba(245, 243, 238, 0.5);
   min-width: 62px;
 }
+.contact-line .contact-email {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-all;
+}
+.contact-line .contact-email:hover { color: var(--brass); }
 
 /* ---------------------------------------------------
    Project cards
@@ -547,7 +554,7 @@
 
 .contact-columns {
   display: grid;
-  grid-template-columns: 1fr 260px;
+  grid-template-columns: 1fr 300px;
   gap: 24px;
   align-items: start;
   max-width: 1040px;
@@ -611,6 +618,15 @@
 }
 .contact-alt-label { font-size: 0.86rem; color: rgba(245,243,238,0.65); margin-bottom: 4px; }
 .contact-alt-btn { text-align: center; width: 100%; }
+.contact-alt .btn-ghost {
+  border-color: rgba(245, 243, 238, 0.55);
+  color: var(--concrete);
+  background: transparent;
+}
+.contact-alt .btn-ghost:hover {
+  background: var(--concrete);
+  color: var(--ink);
+}
 
 /* ---------------------------------------------------
    Project detail modal
@@ -909,4 +925,175 @@
 .lightbox-next { right: 20px; }
 .lightbox-prev:hover,
 .lightbox-next:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* ---------------------------------------------------
+   Enquiry welcome modal
+--------------------------------------------------- */
+.enquiry-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(20, 24, 28, 0.55);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.enquiry-modal-backdrop[hidden] { display: none; }
+
+.enquiry-modal {
+  position: relative;
+  width: 100%;
+  max-width: 50%;
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 30px 70px -20px rgba(20, 24, 28, 0.6);
+  padding: 36px 36px 32px;
+}
+.enquiry-modal::-webkit-scrollbar { display: none; }
+
+.enquiry-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--steel);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.enquiry-modal-close:hover { color: var(--ink); }
+
+.enquiry-modal-title {
+  font-size: 1.6rem;
+  margin: 4px 0 8px;
+  line-height: 1.12;
+  padding-right: 28px;
+}
+.enquiry-modal-sub {
+  color: var(--steel);
+  font-size: 0.92rem;
+  margin: 0 0 18px;
+}
+
+.enquiry-modal-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin-top: 4px;
+}
+.enquiry-modal-form .field-wide { grid-column: 1 / -1; }
+.enquiry-modal-submit { width: 100%; justify-content: center; grid-column: 1 / -1; }
+
+.enquiry-modal-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.enquiry-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.enquiry-action svg {
+  width: 22px;
+  height: 22px;
+  color: var(--blueprint);
+  transition: color 0.15s;
+}
+.enquiry-action:hover {
+  border-color: var(--blueprint);
+  background: var(--blueprint);
+  color: #fff;
+}
+.enquiry-action:hover svg { color: #fff; }
+
+.enquiry-modal-skip {
+  margin-top: 18px;
+  display: inline-block;
+  background: none;
+  border: none;
+  color: var(--steel);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+.enquiry-modal-skip:hover { color: var(--blueprint); }
 .modal-actions { margin-top: 22px; }
+
+.welcome-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 80;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 20px 45px -18px rgba(20, 24, 28, 0.5);
+  padding: 24px 24px 20px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.welcome-toast.is-visible { opacity: 1; transform: translateY(0); }
+
+.welcome-toast-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--steel);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.welcome-toast-close:hover { color: var(--ink); }
+
+.welcome-toast-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+  line-height: 1.2;
+  padding-right: 24px;
+}
+
+.welcome-toast-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.welcome-toast-btn {
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  text-align: center;
+  border-radius: 8px;
+}

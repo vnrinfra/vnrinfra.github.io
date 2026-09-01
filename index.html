@@ -309,7 +309,7 @@
           </div>
           <div class="field">
             <label for="phone">Phone number</label>
-            <input type="tel" id="phone" name="phone" required pattern="^[0-9+\-\s]{7,15}$">
+            <input type="tel" id="phone" name="phone" required maxlength="10" inputmode="numeric" pattern="[0-9]*" autocomplete="tel">
           </div>
           <div class="field">
             <label for="interest">Interested in</label>
@@ -318,10 +318,12 @@
               <option value="villas">Villas</option>
               <option value="farmland">Farmland</option>
               <option value="not-sure">Not sure yet</option>
+              <option value="anvita">Anvita High 9 (current project)</option>
+              <option value="nidhi">Nidhi Avenue, Alair (current project)</option>
             </select>
           </div>
           <div class="field field-wide">
-            <label for="message">Message (optional)</label>
+            <label for="message">Message</label>
             <textarea id="message" name="message" rows="3"></textarea>
           </div>
           <button type="submit" class="btn btn-primary form-submit" id="form-submit-btn">Request Callback</button>
@@ -333,11 +335,12 @@
           <div class="contact-list">
             <p class="contact-line"><span>Office</span> Capital Park, Unit 308, Madhapur</p>
             <p class="contact-line"><span>Phone</span> +91 72074 77207</p>
-            <p class="contact-line"><span>Email</span> Coming soon</p>
+            <p class="contact-line"><span>Email</span> <a class="contact-email" data-contact="email" href="#">Coming soon</a></p>
             <p class="contact-line"><span>Website</span> vnrinfra.github.io</p>
           </div>
           <a href="#" class="btn btn-ghost contact-alt-btn" data-contact="call">Call us</a>
           <a href="#" class="btn btn-whatsapp contact-alt-btn" data-contact="whatsapp">Message on WhatsApp</a>
+          <a href="https://maps.app.goo.gl/6MQQ5pgr6taGii7DA" class="btn btn-ghost contact-alt-btn" data-contact="office" target="_blank" rel="noopener">Office Visit</a>
         </div>
       </div>
     </div>

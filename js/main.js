@@ -6,6 +6,8 @@ import { initProjectDetail } from './project-detail.js';
 import { initSectionNav } from './section-nav.js';
 import { initMarquee } from './marquee.js';
 import { initHeroCarousel, initAboutCarousel } from './hero-carousel.js';
+import { initEnquiryModal } from './enquiry-modal.js';
+import { initWelcomeToast } from './welcome-toast.js';
 
 async function init() {
   initNav();          // event-delegated, safe before header exists
@@ -22,6 +24,8 @@ async function init() {
 
   await loadProjects(); // project cards
   initProjectReveal();
+  initEnquiryModal();   // welcome enquiry popup once per session
+  initWelcomeToast();   // small bottom-right welcome card
 }
 
 document.addEventListener('DOMContentLoaded', init);
