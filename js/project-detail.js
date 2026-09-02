@@ -47,6 +47,13 @@ function galleryHtml(project) {
     </div>`;
 }
 
+function flagFor(project) {
+  const name = (project.name || '').toLowerCase();
+  if (name.includes('anvita')) return 'Landlord share flats available with us';
+  if (name.includes('nidhi')) return 'Villa plots and villa constructions are available with us';
+  return 'Plots available with us';
+}
+
 function mediaHtml(project) {
   const tag = `<span class="plot-tag">${esc(project.statusTag || '')}</span>`;
   const tint = project.tint || '#4B5563';
@@ -102,6 +109,7 @@ function modalHtml(project) {
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pm-title">
       <button type="button" class="modal-close" aria-label="Close details">&times;</button>
       ${mediaHtml(project)}
+      <span class="modal-flag">${flagFor(project)}</span>
       <div class="modal-body">
         <p class="eyebrow">${esc(project.location || '')}</p>
         <h3 class="modal-title" id="pm-title">${esc(project.name || '')}</h3>

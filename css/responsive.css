@@ -33,7 +33,6 @@
     .md-grid { grid-template-columns: 1fr; }
     .md-top { flex-direction: column; align-items: flex-start; gap: 24px; }
     .md-photo { margin: 0 auto; width: 180px; height: 180px; }
-    .md-photo svg { width: 56px; height: 56px; }
     .vmv-grid { grid-template-columns: 1fr; }
     .markets-grid { grid-template-columns: 1fr 1fr; }
   }

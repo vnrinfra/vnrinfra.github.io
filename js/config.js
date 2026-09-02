@@ -34,7 +34,7 @@ export const CONFIG = {
     // ---------------------------------------------------------------
     web3formsEndpoint: "https://api.web3forms.com/submit",
     web3formsAccessKey: "ca0bb91c-393d-4aab-bfe6-a639fba15b0b",
-    leadRecipientEmail: "chnrndr3@gmail.com",
+    leadRecipientEmail: "vrfinancialadvisorm@gmail.com",
 
     // Default pre-filled WhatsApp message.
     whatsappDefaultMessage: "Hi, I'm interested in VNR Infra projects",
