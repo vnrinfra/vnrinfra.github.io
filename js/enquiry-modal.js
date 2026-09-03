@@ -25,6 +25,10 @@ function buildModal(options) {
   root.innerHTML = `
     <div class="enquiry-modal">
       <button type="button" class="enquiry-modal-close" aria-label="Close" aria-hidden="true">&times;</button>
+      <div class="enquiry-offer enquiry-offer--anvita" role="img" aria-label="10% off launch offer on Anvita High 9">
+        <span class="enquiry-offer-badge">10% OFF</span>
+        <span class="enquiry-offer-label">Launch Offer</span>
+      </div>
       <p class="eyebrow">${esc(options.eyebrow || 'WELCOME TO VNR INFRA')}</p>
       <h3 class="enquiry-modal-title" id="enquiry-modal-title">${esc(options.title || 'Find your plot before it\u2019s gone.')}</h3>
       <p class="enquiry-modal-sub">${esc(options.sub || 'Tell us what you\u2019re looking for and we\u2019ll share what\u2019s open in your preferred area.')}</p>

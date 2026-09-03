@@ -77,7 +77,7 @@ function modalHtml(project) {
     sections.push(`
       <div class="modal-section">
         <h4 class="modal-h">Highlights</h4>
-        <ul class="modal-list modal-list-grid">${listHtml(project.features)}</ul>
+        <ul class="modal-list modal-list-grid modal-list-grid--3">${listHtml(project.features)}</ul>
       </div>`);
   }
   if (project.priceHighlights && project.priceHighlights.length) {
@@ -91,7 +91,7 @@ function modalHtml(project) {
     sections.push(`
       <div class="modal-section">
         <h4 class="modal-h">Location</h4>
-        <ul class="modal-list">${listHtml(project.locationHighlights)}</ul>
+        <ul class="modal-list modal-list-grid">${listHtml(project.locationHighlights)}</ul>
       </div>`);
   }
 
@@ -111,9 +111,18 @@ function modalHtml(project) {
       ${mediaHtml(project)}
       <span class="modal-flag">${flagFor(project)}</span>
       <div class="modal-body">
-        <p class="eyebrow">${esc(project.location || '')}</p>
-        <h3 class="modal-title" id="pm-title">${esc(project.name || '')}</h3>
-        ${project.tagline ? `<p class="modal-tagline">${esc(project.tagline)}</p>` : ''}
+        <div class="modal-head">
+          <div class="modal-head-text">
+            <p class="eyebrow">${esc(project.location || '')}</p>
+            <h3 class="modal-title" id="pm-title">${esc(project.name || '')}</h3>
+            ${project.tagline ? `<p class="modal-tagline">${esc(project.tagline)}</p>` : ''}
+          </div>
+          ${project.offer ? `
+          <div class="modal-offer modal-offer--${esc(project.offer.variant || 'circle')}${project.offer.tone ? ` modal-offer--${esc(project.offer.tone)}` : ''}" role="img" aria-label="${esc(project.offer.badge || 'Special offer')}">
+            <span class="modal-offer-badge">${esc(project.offer.badge || '')}</span>
+            ${project.offer.label ? `<span class="modal-offer-label">${esc(project.offer.label)}</span>` : ''}
+          </div>` : ''}
+        </div>
         ${project.description ? `<p class="modal-desc">${esc(project.description)}</p>` : ''}
         ${project.meta && project.meta.length ? `<dl class="modal-meta">${metaDl(project.meta)}</dl>` : ''}
         ${sections.join('')}

@@ -68,7 +68,11 @@
     .modal { max-height: 92vh; max-width: 100%; border-radius: 12px 12px 0 0; }
     .modal-media { height: 230px; }
     .modal-body { padding: 22px 20px 26px; }
-    .modal-list-grid { grid-template-columns: 1fr; }
+    .modal-head { gap: 12px; }
+    .modal-offer--circle { width: 84px; height: 84px; }
+    .modal-offer-badge { font-size: 1.2rem; }
+    .modal-offer-label { font-size: 0.52rem; }
+    .modal-list-grid, .modal-list-grid--3 { grid-template-columns: 1fr; }
     .modal-gallery { grid-template-columns: repeat(2, 1fr); gap: 6px; }
     .lightbox { padding: 20px; }
     .lightbox-prev, .lightbox-next { padding: 8px 12px; font-size: 1.5rem; }
@@ -76,6 +80,8 @@
     .lightbox-next { right: 8px; }
     .enquiry-modal-backdrop { padding: 12px; align-items: flex-end; }
     .enquiry-modal { max-width: 100%; border-radius: 14px 14px 0 0; padding: 26px 20px 28px; }
+    .enquiry-modal .eyebrow { padding-right: 0; }
+    .enquiry-offer { display: none; }
     .enquiry-modal-form { grid-template-columns: 1fr; }
     .enquiry-modal-actions { grid-template-columns: repeat(2, 1fr); }
     .welcome-toast { right: 12px; bottom: 12px; width: auto; }

@@ -1,108 +1,156 @@
 [
-    {
-      "id": "nidhi-avenue",
-      "name": "Nidhi Avenue",
-      "tagline": "A Premium Living Destination",
-      "location": "Alair \u00b7 Warangal Highway",
-      "statusTag": "Booking Open",
-      "tint": "#1D4E89",
-      "images": [
-        "projects/nidhi-avenue/entrance.jpg",
-        "projects/nidhi-avenue/open-plots.jpg",
-        "projects/nidhi-avenue/clubhouse.jpg",
-        "projects/nidhi-avenue/park.jpg",
-        "projects/nidhi-avenue/avenue.jpg",
-        "projects/nidhi-avenue/drone.jpg"
-      ],
-      "description": "DTCP-approved, TS RERA-registered gated layout on the Warangal Highway, with a grand entrance arch, 30 ft BT roads and underground drainage already in place.",
-      "meta": [
-        { "label": "Plot / home sizes", "value": "140\u2013167 yd\u00b2" },
-        { "label": "RERA no.", "value": "0005/ALAI/SWDL/2026" },
-        { "label": "Possession", "value": "On registration" }
-      ],
-      "approvals": [
-        "DTCP Approved Layout",
-        "TS RERA Registered \u2014 L.P.No. 0005/ALAI/SWDL/2026"
-      ],
-      "features": [
-        "100% Clear Title",
-        "Vaasthu Compliant",
-        "Spot Registration",
-        "30 ft wide BT Roads",
-        "Underground Drainage",
-        "Overhead Water Tank",
-        "24x7 Security",
-        "Avenue Plantation",
-        "Bank Loan Available"
-      ],
-      "priceHighlights": [
-        { "label": "1200 Sft (167 yd\u00b2) \u2014 2BHK", "was": "\u20b948L", "now": "\u20b939.69L" },
-        { "label": "1000 Sft (140 yd\u00b2) \u2014 2BHK", "was": "\u20b942L", "now": "\u20b936.45L" }
-      ],
-      "locationHighlights": [
-        "400 m from Warangal Highway (NH-163)",
-        "15 min drive to Bhongir town & railway station",
-        "20 min drive to Yadadri Temple",
-        "5 km from Alair town",
-        "Close to the upcoming Regional Ring Road (RRR)"
-      ],
-      "mapEmbed": "https://www.google.com/maps?q=Nidhi%20Avenue%2C%20Alair%2C%20Warangal%20Highway%2C%20Telangana&z=13&output=embed",
-      "developer": "Marketed by VNR Infra Developers Pvt. Ltd.",
-      "officeAddress": "Jain Sadguru Images Capital Park, 3rd Floor, Unit 308, Capital Park Rd, VIP Hills, Madhapur, HITEC City, Hyderabad \u2013 500081"
+  {
+    "id": "nidhi-avenue",
+    "name": "Nidhi Avenue",
+    "tagline": "A Premium Living Destination",
+    "location": "Alair · Warangal Highway",
+    "statusTag": "Booking Open",
+    "tint": "#1D4E89",
+    "offer": {
+      "variant": "circle",
+      "badge": "10% OFF",
+      "label": "Launch Offer"
     },
+    "images": [
+      "projects/nidhi-avenue/entrance.jpg",
+      "projects/nidhi-avenue/open-plots.jpg",
+      "projects/nidhi-avenue/clubhouse.jpg",
+      "projects/nidhi-avenue/park.jpg",
+      "projects/nidhi-avenue/avenue.jpg",
+      "projects/nidhi-avenue/drone.jpg"
+    ],
+    "description": "DTCP-approved, TS RERA-registered gated layout on the Warangal Highway, with a grand entrance arch, 30 ft BT roads and underground drainage already in place.",
+    "meta": [
+      { "label": "Plot / home sizes", "value": "140–167 yd²" },
+      { "label": "2 BHK", "value": "1000 - 1200 Sft" },
+      { "label": "RERA no.", "value": "0005/ALAI/SWDL/2026" },
+      { "label": "Possession", "value": "On registration" }
+    ],
+    "approvals": [
+      "DTCP Approved Layout",
+      "TS RERA Registered — L.P.No. 0005/ALAI/SWDL/2026"
+    ],
+    "features": [
+      "100% Clear Title",
+      "Vaasthu Compliant",
+      "Spot Registration",
+      "30 ft wide BT Roads",
+      "Underground Drainage",
+      "Overhead Water Tank",
+      "24x7 Security",
+      "Avenue Plantation",
+      "Bank Loan Available",
+      "Gated with Grand Community Arch",
+      "Curbing Stones & Footpaths",
+      "Electricity and Water Line",
+      "Designated Landscaped Parks",
+      "Pollution Free Environment"
+    ],
+    "priceHighlights": [
+      { "label": "1200 Sft (167 yd²) — 2BHK", "was": "₹48L", "now": "₹39.69L" },
+      { "label": "1000 Sft (140 yd²) — 2BHK", "was": "₹42L", "now": "₹36.45L" }
+    ],
+    "locationHighlights": [
+      "400 m from Warangal Highway (NH-163)",
+      "15 min drive to Bhongir town & railway station",
+      "20 min drive to Yadadri Temple",
+      "5 km from Alair town",
+      "Close to the upcoming Regional Ring Road (RRR)",
+      "Under municipality limits, located in 6th ward",
+      "5 mins to Jeedikal Ramalayam Temple",
+      "15 mins to Kolanupaka Mandir",
+      "Government-announced industrial & IT companies on nearby national highway",
+      "AIIMS, Bibinagar",
+      "Yadadri Temple",
+      "Infosys, Ghatakesar",
+      "Swarnagiri Temple"
+    ],
+    "mapEmbed": "https://www.google.com/maps?q=Nidhi%20Avenue%2C%20Alair%2C%20Warangal%20Highway%2C%20Telangana&z=13&output=embed",
+    "developer": "Marketed by VNR Infra Developers Pvt. Ltd.",
+    "officeAddress": "Jain Sadguru Images Capital Park, 3rd Floor, Unit 308, Capital Park Rd, VIP Hills, Madhapur, HITEC City, Hyderabad – 500081"
+  },
 
-    {
-      "id": "Anvita",
-      "name": "Anvita High 9",
-      "tagline": "Luxury Living in Kollur \u00b7 Live High, From Ground to Sky",
-      "location": "Off ORR Exit-2, Kollur \u00b7 Financial District, Hyderabad",
-      "statusTag": "Booking Open",
-      "tint": "#1D4E89",
-      "images": [
-        "projects/anvita/hero.jpg",
-        "projects/anvita/gateway.jpg",
-        "projects/anvita/layout.jpg",
-        "projects/anvita/clubhouse.jpg",
-        "projects/anvita/int-1.jpg",
-        "projects/anvita/int-3.jpg",
-        "projects/anvita/int-5.jpg",
-        "projects/anvita/new-gal-3.jpg",
-        "projects/anvita/new-gal-4.jpg",
-        "projects/anvita/new-gal-8.jpg"
-      ],
-      "description": "A 15-acre luxury gated community of nine towers rising 30 floors \u2014 2 & 3 BHK lifestyle apartments and 4 BHK sky villas \u2014 connected by a 1.6 km skywalk, with the designer Club High, landscaped grounds and a traffic-free podium in the green environs of Kollur.",
-      "meta": [
-        { "label": "Project area", "value": "15 acres" },
-        { "label": "Towers / floors", "value": "9 towers \u00b7 30 floors" },
-        { "label": "RERA no.", "value": "P01100008195" }
-      ],
-      "approvals": [
-        "TS RERA Registered \u2014 P01100008195",
-        "HMDA Approved"
-      ],
-      "features": [
-        "2 & 3 BHK Lifestyle Apartments",
-        "4 BHK Sky Villas",
-        "1.6 km Skywalk",
-        "More than 80% open space",
-        "2 amenity blocks incl. a sports complex",
-        "2 swimming pools",
-        "Club High clubhouse & designer terraces",
-        "Skating rink, cycling & jogging track",
-        "24x7 CCTV security",
-        "100% power backup",
-        "Traffic-free podium",
-        "Pet park"
-      ],
-      "priceHighlights": [
-        { "label": "Apartments & Sky Villas", "now": "On request" }
-      ],
-      "locationHighlights": [
-        "Beside ORR Exit-2, Kollur",
-        "Financial District, Hyderabad"
-      ],
-      "mapEmbed": "https://www.google.com/maps?q=Anvita%20High%209%2C%20Kollur%2C%20Hyderabad%2C%20Telangana&z=14&output=embed",
-      "developer": "Marketed by VNR Infra Developers Pvt. Ltd.",
-      "officeAddress": "Jain Sadguru Images Capital Park, 3rd Floor, Unit 308, Capital Park Rd, VIP Hills, Madhapur, HITEC City, Hyderabad \u2013 500081"
-    }
-  ]
+  {
+    "id": "Anvita",
+    "name": "Anvita High 9",
+    "tagline": "Luxury Living in Kollur · Live High, From Ground to Sky",
+    "location": "Off ORR Exit-2, Kollur · Financial District, Hyderabad",
+    "statusTag": "Booking Open",
+    "tint": "#1D4E89",
+    "offer": {
+      "variant": "circle",
+      "badge": "10% OFF",
+      "label": "Launch Offer",
+      "tone": "anvita"
+    },
+    "images": [
+      "projects/anvita/hero.jpg",
+      "projects/anvita/gateway.jpg",
+      "projects/anvita/layout.jpg",
+      "projects/anvita/clubhouse.jpg",
+      "projects/anvita/int-1.jpg",
+      "projects/anvita/int-3.jpg",
+      "projects/anvita/int-5.jpg",
+      "projects/anvita/new-gal-3.jpg",
+      "projects/anvita/new-gal-4.jpg",
+      "projects/anvita/new-gal-8.jpg"
+    ],
+    "description": "A 15-acre luxury gated community of nine towers rising 30 floors — 2 & 3 BHK lifestyle apartments and 4 BHK sky villas — connected by a 1.6 km skywalk, with the designer Club High, landscaped grounds and a traffic-free podium in the green environs of Kollur.",
+    "meta": [
+      { "label": "Project area", "value": "15 acres" },
+      { "label": "Towers / floors", "value": "9 towers · 30 floors" },
+      { "label": "RERA no.", "value": "P01100008195" },
+      { "label": "Total homes", "value": "2330" },
+      { "label": "2 & 3 BHK", "value": "1300 - 2615 sq.ft" },
+      { "label": "4 BHK (Sky Villas)", "value": "2700 - 5000 sq.ft" }
+    ],
+    "approvals": [
+      "TS RERA Registered — P01100008195",
+      "HMDA Approved"
+    ],
+    "features": [
+      "2 & 3 BHK Lifestyle Apartments",
+      "4 BHK Sky Villas",
+      "1.6 km Skywalk",
+      "More than 80% open space",
+      "2 amenity blocks incl. a sports complex",
+      "2 swimming pools",
+      "Club High clubhouse & designer terraces",
+      "Skating rink, cycling & jogging track",
+      "24x7 CCTV security",
+      "100% power backup",
+      "Traffic-free podium",
+      "Pet park",
+      "Walking Track",
+      "Amphitheatre",
+      "Basketball Court",
+      "Tennis Court",
+      "Cricket Practicing Nets",
+      "Outdoor Fitness Stations",
+      "Aroma Garden",
+      "Reflexology Pathway",
+      "Flower Garden",
+      "Medicinal Garden",
+      "Water Feature",
+      "Seating with Pergola",
+      "Juice Truck Plaza"
+    ],
+    "priceHighlights": [
+      { "label": "Apartments & Sky Villas", "now": "On request" },
+      { "label": "2 & 3 BHK Lifestyle Apartments (1300 - 2615 sq.ft)", "now": "On request" },
+      { "label": "4 BHK Sky Villas (2700 - 5000 sq.ft)", "now": "On request" }
+    ],
+    "locationHighlights": [
+      "Beside ORR Exit-2, Kollur",
+      "Financial District, Hyderabad",
+      "IT Hub — 650 acres, sanctioned — 1 km from Anvita",
+      "Nagulapally Railway Station — 350 acres, sanctioned — 1 km from Anvita",
+      "Gaudium International School — 1 km",
+      "Delhi Public School — 1 km",
+      "Samhita International School — 1 km"
+    ],
+    "mapEmbed": "https://www.google.com/maps?q=Anvita%20High%209%2C%20Kollur%2C%20Hyderabad%2C%20Telangana&z=14&output=embed",
+    "developer": "Marketed by VNR Infra Developers Pvt. Ltd.",
+    "officeAddress": "Jain Sadguru Images Capital Park, 3rd Floor, Unit 308, Capital Park Rd, VIP Hills, Madhapur, HITEC City, Hyderabad – 500081"
+  }
+]

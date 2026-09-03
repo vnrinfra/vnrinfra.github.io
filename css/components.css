@@ -761,6 +761,13 @@
 .carousel-dot.is-active { background: #fff; transform: scale(1.25); }
 
 .modal-body { padding: 28px 32px 32px; }
+.modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+.modal-head-text { flex: 1; min-width: 0; }
 .modal-title { font-size: 1.8rem; margin-bottom: 0.15em; }
 .modal-tagline {
   font-family: var(--display);
@@ -769,6 +776,79 @@
   margin-bottom: 0.5em;
 }
 .modal-desc { color: var(--steel); }
+
+/* Eye-catching launch-offer badge.
+   Circular sticker, with per-project color tones:
+   --circle  : rotated gold circular sticker (Nidhi Avenue)
+   --anvita  : rotated rose/copper circular sticker (Anvita High 9) */
+.modal-offer {
+  flex: 0 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.modal-offer-badge {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.55rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.modal-offer-label {
+  margin-top: 6px;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* -- Variant: rotated gold circular sticker -------------------------- */
+.modal-offer--circle {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  transform: rotate(-8deg);
+  background: linear-gradient(145deg, #e9c97b 0%, #d4a94b 45%, #b8862f 100%);
+  box-shadow:
+    0 10px 24px -8px rgba(20, 24, 28, 0.45),
+    inset 0 2px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -3px 6px rgba(120, 80, 20, 0.35);
+  padding: 10px;
+}
+/* -- Variant tone: Anvita High 9 (rose-gold / copper) ---------------- */
+.modal-offer--circle.modal-offer--anvita {
+  background: linear-gradient(145deg, #e8a0a6 0%, #cf6a72 45%, #b04a53 100%);
+  box-shadow:
+    0 10px 24px -8px rgba(20, 24, 28, 0.45),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -3px 6px rgba(120, 30, 40, 0.35);
+}
+.modal-offer--circle::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  right: 16px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  filter: blur(2px);
+  pointer-events: none;
+}
+.modal-offer--circle .modal-offer-badge {
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(120, 80, 20, 0.45);
+}
+.modal-offer--circle.modal-offer--anvita .modal-offer-badge {
+  text-shadow: 0 2px 4px rgba(120, 30, 40, 0.45);
+}
+.modal-offer--circle .modal-offer-label {
+  color: rgba(255, 255, 255, 0.95);
+}
 
 .modal-meta {
   display: grid;
@@ -822,6 +902,7 @@
   transform: rotate(45deg);
 }
 .modal-list-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; }
+.modal-list-grid--3 { grid-template-columns: repeat(3, 1fr); gap: 8px 14px; }
 
 .price-list {
   list-style: none;
@@ -991,12 +1072,53 @@
 }
 .enquiry-modal-close:hover { color: var(--ink); }
 
+/* Anvita discount offer badge between the eyebrow text (left) and the
+   close button (right). Hidden on mobile/small screens (responsive.css). */
+.enquiry-offer {
+  position: absolute;
+  top: 14px;
+  left: 80%;
+  transform: translateX(-50%) rotate(-8deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(145deg, #e8a0a6 0%, #cf6a72 45%, #b04a53 100%);
+  box-shadow:
+    0 8px 18px -8px rgba(20, 24, 28, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -3px 6px rgba(120, 30, 40, 0.35);
+}
+.enquiry-offer-badge {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(120, 30, 40, 0.45);
+}
+.enquiry-offer-label {
+  margin-top: 4px;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+}
+
 .enquiry-modal-title {
   font-size: 1.6rem;
   margin: 4px 0 8px;
   line-height: 1.12;
   padding-right: 28px;
 }
+.enquiry-modal .eyebrow { padding-right: 100px; }
 .enquiry-modal-sub {
   color: var(--steel);
   font-size: 0.92rem;
