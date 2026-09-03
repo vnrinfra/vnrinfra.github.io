@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://vnrinfra.github.io/</loc>
+    <loc>https://vninfradevelopers.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vnrinfra.github.io/#projects</loc>
+    <loc>https://vninfradevelopers.com/#projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vnrinfra.github.io/#services</loc>
+    <loc>https://vninfradevelopers.com/#services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vnrinfra.github.io/#about</loc>
+    <loc>https://vninfradevelopers.com/#about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vnrinfra.github.io/#contact</loc>
+    <loc>https://vninfradevelopers.com/#contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vnrinfra.github.io/#office</loc>
+    <loc>https://vninfradevelopers.com/#office</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
