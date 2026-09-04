@@ -142,7 +142,7 @@ const submitLabels = {
         leadProjectInput.value = 'General';
         formPurposeNote.textContent = 'General enquiry';
         submitBtn.textContent = 'Request Callback';
-        alert(`Thanks ${name.split(' ')[0]}, ${phrase}${projectPhrase} at ${phone} shortly.`);
+        setStatus(status, `Thanks ${name.split(' ')[0]}, ${phrase}${projectPhrase} at ${phone} shortly.`, 'ok');
       } else {
         setStatus(status, result.message, 'err');
         submitBtn.textContent = submitLabels[action] || 'Request Callback';

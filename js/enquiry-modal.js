@@ -8,6 +8,16 @@ const DEFAULTS = {
 
 const SUBMIT_COPY = "we'll call you back within a few hours";
 
+// Shown once per tab/session — dismissed once, it stays hidden until the
+// browser tab is closed (sessionStorage clears automatically on tab close).
+const SEEN_KEY = 'vnr_enquiry_seen';
+function wasSeen() {
+  try { return sessionStorage.getItem(SEEN_KEY) === '1'; } catch { return false; }
+}
+function markSeen() {
+  try { sessionStorage.setItem(SEEN_KEY, '1'); } catch { /* ignore */ }
+}
+
 function esc(value) {
   return String(value).replace(/[&<>"']/g, (c) => (
     { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
@@ -92,6 +102,7 @@ function buildModal(options) {
   const submitBtn = root.querySelector('.enquiry-modal-submit');
 
   function close() {
+    markSeen();
     root.hidden = true;
     document.body.style.overflow = '';
     closeBtn.setAttribute('aria-hidden', 'false');
@@ -172,8 +183,9 @@ function buildModal(options) {
       form.querySelectorAll('.touched').forEach((el) => el.classList.remove('touched'));
       submitBtn.textContent = 'Request Callback';
       submitBtn.disabled = false;
-      alert(`Thanks ${name.split(' ')[0]}, ${SUBMIT_COPY} about ${label}.`);
-      close();
+      const msg = `Thanks ${name.split(' ')[0]}, ${SUBMIT_COPY} about ${label}.`;
+      setStatus(status, msg, 'ok');
+      setTimeout(() => close(), 1400);
     } else {
       setStatus(status, result.message, 'err');
       submitBtn.textContent = 'Request Callback';
@@ -194,8 +206,9 @@ function setStatus(el, message, type) {
 }
 
 export function initEnquiryModal(opts = {}) {
+  // Skip entirely if the user already dismissed it this tab/session.
+  if (wasSeen()) return;
   const options = Object.assign({}, DEFAULTS, opts);
-  // Shows on every visit — no storage suppression.
   const modal = buildModal(options);
   setTimeout(() => modal.open(), options.showDelay);
 }
