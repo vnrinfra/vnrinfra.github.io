@@ -31,11 +31,15 @@ function mediaBlockHtml(project) {
 }
 
 function projectCardHtml(project) {
+  const tag = project.tag ? `<span class="project-card-tag">${project.tag}</span>` : '';
   return `
     <article class="project-card" data-project-id="${project.id || ''}">
       ${mediaBlockHtml(project)}
       <div class="project-body">
-        <h3>${project.name}</h3>
+        <div class="project-card-head">
+          <h3>${project.name}</h3>
+          ${tag}
+        </div>
         <p class="project-loc">${project.location}</p>
         <p class="project-desc">${project.description}</p>
         <ul class="project-meta">${metaListHtml(project.meta)}</ul>
