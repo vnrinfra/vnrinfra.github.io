@@ -71,6 +71,8 @@
     .modal-head { gap: 12px; }
     .modal-offer--circle { width: 84px; height: 84px; }
     .modal-offer-badge { font-size: 1.2rem; }
+    .modal-offer-was { font-size: 0.72rem; }
+    .modal-offer-now { font-size: 1.05rem; }
     .modal-offer-label { font-size: 0.52rem; }
     .modal-list-grid, .modal-list-grid--3 { grid-template-columns: 1fr; }
     .modal-gallery { grid-template-columns: repeat(2, 1fr); gap: 6px; }

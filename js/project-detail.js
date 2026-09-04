@@ -119,7 +119,9 @@ function modalHtml(project) {
           </div>
           ${project.offer ? `
           <div class="modal-offer modal-offer--${esc(project.offer.variant || 'circle')}${project.offer.tone ? ` modal-offer--${esc(project.offer.tone)}` : ''}" role="img" aria-label="${esc(project.offer.badge || 'Special offer')}">
-            <span class="modal-offer-badge">${esc(project.offer.badge || '')}</span>
+            ${project.offer.was && project.offer.now
+              ? `<span class="modal-offer-was">${esc(project.offer.was)}</span><span class="modal-offer-now">${esc(project.offer.now)}</span>`
+              : `<span class="modal-offer-badge">${esc(project.offer.badge || '')}</span>`}
             ${project.offer.label ? `<span class="modal-offer-label">${esc(project.offer.label)}</span>` : ''}
           </div>` : ''}
         </div>

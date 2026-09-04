@@ -10,7 +10,9 @@
     "offer": {
       "variant": "circle",
       "badge": "10% OFF",
-      "label": "Launch Offer"
+      "label": "Limited Period Offer",
+      "was": "₹11,999",
+      "now": "₹9,999"
     },
     "images": [
       "projects/nidhi-avenue/entrance.jpg",
@@ -22,10 +24,22 @@
     ],
     "description": "DTCP-approved, TS RERA-registered gated layout on the Warangal Highway, with a grand entrance arch, 30 ft BT roads and underground drainage already in place.",
     "meta": [
-      { "label": "Plot / home sizes", "value": "140–167 yd²" },
-      { "label": "2 BHK", "value": "1000 - 1200 Sft" },
-      { "label": "RERA no.", "value": "0005/ALAI/SWDL/2026" },
-      { "label": "Possession", "value": "On registration" }
+      {
+        "label": "Plot / home sizes",
+        "value": "140–167 yd²"
+      },
+      {
+        "label": "2 BHK",
+        "value": "1000 - 1200 Sft"
+      },
+      {
+        "label": "RERA no.",
+        "value": "0005/ALAI/SWDL/2026"
+      },
+      {
+        "label": "Possession",
+        "value": "On registration"
+      }
     ],
     "approvals": [
       "DTCP Approved Layout",
@@ -48,8 +62,14 @@
       "Pollution Free Environment"
     ],
     "priceHighlights": [
-      { "label": "1200 Sft (167 yd²) — 2BHK", "was": "₹48L", "now": "₹39.69L" },
-      { "label": "1000 Sft (140 yd²) — 2BHK", "was": "₹42L", "now": "₹36.45L" }
+      {
+        "label": "1200 Sft (167 yd²) — 2BHK",
+        "now": "On request"
+      },
+      {
+        "label": "1000 Sft (140 yd²) — 2BHK",
+        "now": "On request"
+      }
     ],
     "locationHighlights": [
       "400 m from Warangal Highway (NH-163)",
@@ -70,7 +90,6 @@
     "developer": "Marketed by VNR Infra Developers Pvt. Ltd.",
     "officeAddress": "Jain Sadguru Images Capital Park, 3rd Floor, Unit 308, Capital Park Rd, VIP Hills, Madhapur, HITEC City, Hyderabad – 500081"
   },
-
   {
     "id": "Anvita",
     "name": "Anvita High 9",
@@ -81,8 +100,10 @@
     "offer": {
       "variant": "circle",
       "badge": "10% OFF",
-      "label": "Launch Offer",
-      "tone": "anvita"
+      "label": "Limited Period Offer",
+      "tone": "anvita",
+      "was": "₹8,999",
+      "now": "₹6,999"
     },
     "images": [
       "projects/anvita/hero.jpg",
@@ -98,12 +119,30 @@
     ],
     "description": "A 15-acre luxury gated community of nine towers rising 30 floors — 2 & 3 BHK lifestyle apartments and 4 BHK sky villas — connected by a 1.6 km skywalk, with the designer Club High, landscaped grounds and a traffic-free podium in the green environs of Kollur.",
     "meta": [
-      { "label": "Project area", "value": "15 acres" },
-      { "label": "Towers / floors", "value": "9 towers · 30 floors" },
-      { "label": "RERA no.", "value": "P01100008195" },
-      { "label": "Total homes", "value": "2330" },
-      { "label": "2 & 3 BHK", "value": "1300 - 2615 sq.ft" },
-      { "label": "4 BHK (Sky Villas)", "value": "2700 - 5000 sq.ft" }
+      {
+        "label": "Project area",
+        "value": "15 acres"
+      },
+      {
+        "label": "Towers / floors",
+        "value": "9 towers · 30 floors"
+      },
+      {
+        "label": "RERA no.",
+        "value": "P01100008195"
+      },
+      {
+        "label": "Total homes",
+        "value": "2330"
+      },
+      {
+        "label": "2 & 3 BHK",
+        "value": "1300 - 2615 sq.ft"
+      },
+      {
+        "label": "4 BHK (Sky Villas)",
+        "value": "2700 - 5000 sq.ft"
+      }
     ],
     "approvals": [
       "TS RERA Registered — P01100008195",
@@ -137,9 +176,18 @@
       "Juice Truck Plaza"
     ],
     "priceHighlights": [
-      { "label": "Apartments & Sky Villas", "now": "On request" },
-      { "label": "2 & 3 BHK Lifestyle Apartments (1300 - 2615 sq.ft)", "now": "On request" },
-      { "label": "4 BHK Sky Villas (2700 - 5000 sq.ft)", "now": "On request" }
+      {
+        "label": "Apartments & Sky Villas",
+        "now": "On request"
+      },
+      {
+        "label": "2 & 3 BHK Lifestyle Apartments (1300 - 2615 sq.ft)",
+        "now": "On request"
+      },
+      {
+        "label": "4 BHK Sky Villas (2700 - 5000 sq.ft)",
+        "now": "On request"
+      }
     ],
     "locationHighlights": [
       "Beside ORR Exit-2, Kollur",
