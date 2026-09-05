@@ -4,16 +4,16 @@ import { createCarousel, CAROUSEL_INTERVAL } from './carousel.js';
 // here (relative to the assets-branch CDN) and the hero rotates them.
 // Keep HERO_SLIDES[ i ].name / .where in sync for the caption chip.
 const HERO_IMAGES = [
-  'assets/hero/slide-1.jpg',
-  'assets/hero/slide-2.jpg',
-  'assets/hero/slide-3.jpg',
-  'assets/hero/slide-4.jpg',
+  'assets/hero/hero_1.jpeg',
+  'assets/hero/hero_2.jpeg',
+  'assets/hero/hero_3.jpeg',
+  'assets/hero/hero_4.jpeg'
 ];
 const HERO_SLIDES = [
-  { name: 'VNR Infra', where: 'Build, develop, deliver' },
-  { name: 'VNR Infra', where: 'HMDA & RERA approved layouts' },
-  { name: 'VNR Infra', where: 'Clear titles, real infrastructure' },
-  { name: 'VNR Infra', where: 'A plan for every plot' },
+  { name: 'VNR Infra office entrance', where: 'Capital park, Hi-Tech city' },
+  { name: 'VNR Infra office setup', where: 'HMDA & RERA approved layouts' },
+  { name: 'VNR Infra', where: '' },
+  { name: 'VNR Infra', where: '' },
 ];
 
 export function initHeroCarousel() {
