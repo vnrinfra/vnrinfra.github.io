@@ -47,6 +47,8 @@
     .hero { padding: 76px 0 56px; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
     .footer-links { flex-wrap: wrap; gap: 14px 18px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .footer-bottom .footer-credit { margin: 0 0 0 auto; text-align: right; }
     .wrap { padding: 0 20px; }
     .enquiry-form, .contact-alt { min-width: 0; }
     .enquiry-form { padding: 22px 18px; }
