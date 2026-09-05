@@ -6,14 +6,14 @@ import { createCarousel, CAROUSEL_INTERVAL } from './carousel.js';
 const HERO_IMAGES = [
   'assets/hero/hero_1.jpeg',
   'assets/hero/hero_2.jpeg',
-  'assets/hero/hero_3.jpeg',
-  'assets/hero/hero_4.jpeg'
+  'assets/hero/hero_3.jpg',
+  'assets/hero/hero_4.jpg'
 ];
 const HERO_SLIDES = [
   { name: 'VNR Infra office entrance', where: 'Capital park, Hi-Tech city' },
   { name: 'VNR Infra office setup', where: 'HMDA & RERA approved layouts' },
-  { name: 'VNR Infra', where: '' },
-  { name: 'VNR Infra', where: '' },
+  { name: 'VNR Infra', where: 'Anvita high 9 (current project)' },
+  { name: 'VNR Infra', where: 'Nidhi Avenue (current project)' },
 ];
 
 export function initHeroCarousel() {
@@ -77,10 +77,10 @@ export function initHeroCarousel() {
   box.appendChild(counter);
   box.appendChild(bar);
 
-  // Keep the caption/counter/progress hidden until an actual hero image has
-  // loaded. Until the user pushes their assets to the assets branch these
-  // 404 and the branded placeholder (layered below) is all that shows.
+  // Once at least one real hero image has loaded, drop the branded
+  // placeholder and reveal the caption/counter/progress bar.
   const reveal = () => {
+    ph.remove();
     caption.hidden = false;
     counter.hidden = false;
     bar.hidden = false;
