@@ -6,9 +6,39 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vnrinfradevelopers.com/#projects</loc>
+    <loc>https://vnrinfradevelopers.com/plots-in-aler.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vnrinfradevelopers.com/plots-in-yadadri.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vnrinfradevelopers.com/plots-near-hyderabad.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vnrinfradevelopers.com/hmda-plots-hyderabad.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vnrinfradevelopers.com/dtcp-plots-aler.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vnrinfradevelopers.com/nidhi-avenue-aler.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vnrinfradevelopers.com/#projects</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vnrinfradevelopers.com/#services</loc>
@@ -23,7 +53,7 @@
   <url>
     <loc>https://vnrinfradevelopers.com/#contact</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vnrinfradevelopers.com/#office</loc>
