@@ -502,7 +502,60 @@
     </div>
   </section>
 
+  <section class="home-blogs" id="home-blogs" style="padding: 96px 0; background: var(--paper); border-top: 1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">LATEST INSIGHTS</p>
+        <h2>Explore expert insights on real-estate investments, approvals, and buying guides.</h2>
+      </div>
+      <div class="project-grid" id="home-blogs-grid">
+        <p class="projects-empty">Loading insights&hellip;</p>
+      </div>
+      <div style="margin-top: 48px; text-align: center;">
+        <a href="blogs.html" class="btn btn-ghost" style="border-color: var(--blueprint); color: var(--blueprint);">View All Articles &rarr;</a>
+      </div>
+    </div>
+  </section>
+
 </main>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const grid = document.getElementById('home-blogs-grid');
+  if (!grid) return;
+  try {
+    const res = await fetch('data/blogs.json');
+    if(!res.ok) throw new Error('Network error');
+    const blogs = await res.json();
+    blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const latest = blogs.slice(0, 3);
+    
+    grid.innerHTML = latest.map(blog => {
+      const formattedDate = new Date(blog.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      return `
+        <article class="project-card" onclick="window.location.href='blog-detail.html?slug=${blog.slug}'">
+          <div class="blog-plot">
+            <img src="${blog.image}" alt="${blog.title}" loading="lazy" onerror="this.src='assets/logo.png'">
+            <span class="plot-tag">${blog.category}</span>
+          </div>
+          <div class="project-body">
+            <div class="project-card-head">
+              <h3 style="font-size: 1.15rem; line-height: 1.3;">${blog.title}</h3>
+            </div>
+            <p class="project-loc" style="margin-bottom: 0.8em; font-size: 0.8rem;">${formattedDate}</p>
+            <p class="project-desc" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 16px;">${blog.excerpt}</p>
+            <div class="card-actions" style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line);">
+              <a href="blog-detail.html?slug=${blog.slug}" class="chip-btn" style="text-decoration: none;">Read More &rarr;</a>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join('');
+  } catch(e) {
+    grid.innerHTML = '<p class="projects-empty">Could not load insights.</p>';
+  }
+});
+</script>
 
 <!-- Footer + floating WhatsApp + mobile CTA bar, from partials/footer.html -->
 <div id="footer-root"></div>

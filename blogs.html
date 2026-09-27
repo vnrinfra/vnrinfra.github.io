@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Estate Insights & Investment Guides — VNR Infra</title>
+<meta name="description" content="Explore expert insights on real-estate investments, approvals, HMDA, DTCP, and buying guides from VNR Infra.">
+<link rel="canonical" href="https://vnrinfradevelopers.com/blogs.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Real Estate Insights & Investment Guides — VNR Infra">
+<meta property="og:url" content="https://vnrinfradevelopers.com/blogs.html">
+<meta property="og:image" content="https://vnrinfradevelopers.com/favicon.png">
+<meta property="og:description" content="Explore expert insights on real-estate investments, approvals, HMDA, DTCP, and buying guides from VNR Infra.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Real Estate Insights & Investment Guides",
+  "url": "https://vnrinfradevelopers.com/blogs.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "VNR Infra",
+    "logo": "https://vnrinfradevelopers.com/favicon.png"
+  }
+}
+</script>
+<link rel="icon" href="favicon.png" sizes="any" type="image/png">
+<link rel="apple-touch-icon" href="https://vnrinfradevelopers.com/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+<style>
+  .blog-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 48px;
+    gap: 24px;
+  }
+  .blog-search-wrap {
+    width: 100%;
+    max-width: 480px;
+  }
+  .blog-search {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 30px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 1rem;
+    font-family: var(--body);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .blog-search:focus {
+    outline: none;
+    border-color: var(--blueprint);
+    box-shadow: 0 0 0 3px rgba(29, 78, 137, 0.1);
+  }
+  .blog-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .blog-filter-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--steel);
+    font-size: 0.85rem;
+    font-family: var(--body);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .blog-filter-btn:hover {
+    border-color: var(--blueprint);
+    color: var(--blueprint);
+  }
+  .blog-filter-btn.active {
+    background: var(--blueprint);
+    color: #fff;
+    border-color: var(--blueprint);
+  }
+  .blog-load-more-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+  }
+  .blog-hero {
+    padding: 140px 0 60px;
+    background: linear-gradient(180deg, var(--canvas) 0%, var(--paper) 100%);
+    text-align: center;
+  }
+  .blog-hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    max-width: 800px;
+    margin: 0 auto 20px;
+  }
+  .blog-hero .hero-sub {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .blog-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--steel);
+    padding: 48px 0;
+  }
+  
+  .blogs-page .blog-plot {
+    aspect-ratio: unset !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: transparent !important;
+  }
+
+  .blogs-page .blog-plot img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+</style>
+</head>
+<body class="blogs-page">
+
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<div id="header-root"></div>
+
+<main id="top">
+  <section class="blog-hero">
+    <div class="wrap">
+      <h1>Real Estate Insights & Investment Guides</h1>
+      <p class="hero-sub">Explore expert insights on open plots, real estate investments, DTCP vs HMDA approvals, and property buying guides.</p>
+    </div>
+  </section>
+
+  <section class="projects" id="blogs-section">
+    <div class="wrap">
+      
+      <div class="blog-controls">
+        <div class="blog-search-wrap">
+          <input type="text" id="blog-search" class="blog-search" placeholder="Search articles by title or keyword...">
+        </div>
+        
+        <div class="blog-filters" id="blog-filters">
+          <button class="blog-filter-btn active" data-category="All">All</button>
+          <button class="blog-filter-btn" data-category="Investment Guide">Investment Guide</button>
+          <button class="blog-filter-btn" data-category="HMDA">HMDA</button>
+          <button class="blog-filter-btn" data-category="DTCP">DTCP</button>
+          <button class="blog-filter-btn" data-category="Buying Guide">Buying Guide</button>
+          <button class="blog-filter-btn" data-category="Legal">Legal</button>
+          <button class="blog-filter-btn" data-category="Project Updates">Project Updates</button>
+        </div>
+      </div>
+
+      <div class="project-grid" id="blogs-grid">
+        <p class="projects-empty">Loading articles&hellip;</p>
+      </div>
+
+      <div class="blog-load-more-wrap" id="load-more-wrap" style="display: none;">
+        <button type="button" id="blog-load-more" class="btn btn-ghost">Load More Articles</button>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<div id="footer-root"></div>
+
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/blogs.js"></script>
+</body>
+</html>
