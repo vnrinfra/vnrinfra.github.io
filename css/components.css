@@ -470,6 +470,31 @@
   border-radius: 3px;
 }
 
+.blog-plot {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--paper);
+  padding: 0;
+}
+.blog-plot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+.project-card:hover .blog-plot img {
+  transform: scale(1.05);
+}
+.blog-plot .plot-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+}
+
 .project-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
 .project-card-head {
   display: flex;
